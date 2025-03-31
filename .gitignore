@@ -1,0 +1,49 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS Finder attributes
+Icon?
+._*
+
+# macOS resource forks
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# Node.js dependencies (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git files
+*.orig
+*.rej
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*.tmp
+*.temp
+*.~*
+
+# Markdown editor backups
+*.md~*
+
+# Other
+Thumbs.db
+ehthumbs.db
+Desktop.ini

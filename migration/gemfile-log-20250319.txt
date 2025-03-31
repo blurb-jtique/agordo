@@ -1,0 +1,1228 @@
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (= 2.3.18.58)
+
+  In Gemfile:
+    cacheable_flash (= 0.2.0) was resolved to 0.2.0, which depends on
+      actionpack was resolved to 2.3.18.58, which depends on
+        activesupport (= 2.3.18.58)
+
+    rails was resolved to 3.2.22.5, which depends on
+      activesupport (= 3.2.22.5)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (= 2.3.18.58)
+
+  In Gemfile:
+    db-charmer was resolved to 1.9.1, which depends on
+      activerecord (< 4.0.0) was resolved to 2.3.18.58, which depends on
+        activesupport (= 2.3.18.58)
+
+    rails was resolved to 3.2.22.5, which depends on
+      activesupport (= 3.2.22.5)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activerecord":
+  In snapshot (Gemfile.lock):
+    activerecord (= 2.3.18.58)
+
+  In Gemfile:
+    after_commit was resolved to 1.0.11, which depends on
+      activerecord (>= 1.15.6, < 3.0.0)
+
+    rails was resolved to 3.2.22.5, which depends on
+      activerecord (= 3.2.22.5)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activerecord":
+  In snapshot (Gemfile.lock):
+    activerecord (= 2.3.18.58)
+
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      activerecord (= 3.2.22.5)
+
+    thinking-sphinx (~> 1.3) was resolved to 1.5.0, which depends on
+      activerecord (~> 2.1)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (= 2.3.18.58)
+
+  In Gemfile:
+    no_peeping_toms (~> 1.1.0) was resolved to 1.1.0, which depends on
+      activerecord (>= 1.1) was resolved to 2.3.18.58, which depends on
+        activesupport (= 2.3.18.58)
+
+    rails was resolved to 3.2.22.5, which depends on
+      activesupport (= 3.2.22.5)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (= 2.3.18.58)
+
+  In Gemfile:
+    activemerchant (= 1.43.3) was resolved to 1.43.3, which depends on
+      active_utils (~> 2.0, >= 2.0.1) was resolved to 2.2.3, which depends on
+        activesupport (>= 2.3.11)
+
+    activemerchant (= 1.43.3) was resolved to 1.43.3, which depends on
+      activesupport (>= 2.3.14, < 5.0.0)
+
+    rails was resolved to 3.2.22.5, which depends on
+      activesupport (= 3.2.22.5)
+
+    rails_best_practices (= 1.15.7) was resolved to 1.15.7, which depends on
+      activesupport
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (= 2.3.18.58)
+
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      activesupport (= 3.2.22.5)
+
+    rails_best_practices (= 1.15.7) was resolved to 1.15.7, which depends on
+      activesupport
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (= 2.3.18.58)
+
+  In Gemfile:
+    factory_girl (= 2.3.2) was resolved to 2.3.2, which depends on
+      activesupport
+
+    rails was resolved to 3.2.22.5, which depends on
+      activesupport (= 3.2.22.5)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 2 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "bundler":
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      bundler (~> 1.0)
+
+  Current Bundler version:
+    bundler (2.2.34)
+
+Your bundle requires a different version of Bundler than the one you're running.
+Install the necessary version with `gem install bundler:1.17.3` and rerun bundler using `bundle _1.17.3_ install`
+➜  blurby git:(upgrade) ✗ gst
+On branch upgrade
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Gemfile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Traceback (most recent call last):
+	2: from /Users/c-johan.tique/.rbenv/versions/2.7.8/bin/bundle:23:in `<main>'
+	1: from /Users/c-johan.tique/.rbenv/versions/2.7.8/lib/ruby/2.7.0/rubygems.rb:296:in `activate_bin_path'
+/Users/c-johan.tique/.rbenv/versions/2.7.8/lib/ruby/2.7.0/rubygems.rb:277:in `find_spec_for_exe': Could not find 'bundler' (2.2.34) required by your /Users/c-johan.tique/Dev/code/rpi/blurby_all/analysis/blurby/Gemfile.lock. (Gem::GemNotFoundException)
+To update to the latest version installed on your system, run `bundle update --bundler`.
+To install the missing version, run `gem install bundler:2.2.34`
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 3 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "bundler":
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      bundler (~> 1.0)
+
+  Current Bundler version:
+    bundler (2.2.34)
+
+Your bundle requires a different version of Bundler than the one you're running.
+Install the necessary version with `gem install bundler:1.17.3` and rerun bundler using `bundle _1.17.3_ install`
+➜  blurby git:(upgrade) ✗ gem install bundler:1.17.3
+Fetching bundler-1.17.3.gem
+Successfully installed bundler-1.17.3
+Parsing documentation for bundler-1.17.3
+Installing ri documentation for bundler-1.17.3
+Done installing documentation for bundler after 1 seconds
+1 gem installed
+➜  blurby git:(upgrade) ✗ gem uninstall bundler -v 2.2.34
+Successfully uninstalled bundler-2.2.34
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 3 mode
+Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.2.34). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.34`.
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "bundler":
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      bundler (~> 1.0)
+
+  Current Bundler version:
+    bundler (2.1.4)
+This Gemfile requires a different version of Bundler.
+Perhaps you need to update Bundler by running `gem install bundler`?
+
+Could not find gem 'bundler (~> 1.0)', which is required by gem 'rails', in any of the sources.
+➜  blurby git:(upgrade) ✗ bundle install
+Executing Gemfile in RAILS 3 mode
+Warning: the running version of Bundler (2.1.4) is older than the version that created the lockfile (2.2.34). We suggest you to upgrade to the version that created the lockfile by running `gem install bundler:2.2.34`.
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Using rake 10.3.2
+Using Platform 0.4.0
+Using open4 1.3.0
+Using POpen4 0.1.4
+Using RedCloth 4.2.9
+Using aasm 4.1.0
+Using activesupport 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rack 1.2.8
+Using actionpack 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using actionmailer 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using activerecord 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using activerecord-postgres-hstore 0.6.0 from https://github.com/blurb/activerecord-postgres-hstore.git (at old_rails_fix@78ed04d)
+Using activeresource 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using acts_as_list 0.1.4
+Using acts_as_tree 0.1.1
+Using addressable 2.4.0
+Using chunky_png 1.3.4
+Using fssm 0.2.10
+Using sass 3.2.19
+Using compass 0.12.7
+Using animation 0.1.alpha.3
+Using io-like 0.3.0
+Using archive-zip 0.6.0
+Using ast 2.3.0
+Using json 1.8.5
+Using multi_xml 0.6.0
+Using httparty 0.13.3
+Using mini_portile2 2.8.8
+Using racc 1.8.1
+Using nokogiri 1.14.5 (arm64-darwin)
+Using uuidtools 2.1.5
+Using aws-sdk 1.6.9
+Using coffee-script-source 1.9.1.1
+Using execjs 2.0.2
+Using coffee-script 2.4.1
+Using barista 1.3.0
+Using i18n 0.7.0
+Using faker 1.4.3
+Using yajl-ruby 1.4.1
+Using bbf 1.0.78
+Using bcrypt 3.1.10
+Using bcrypt-ruby 3.1.5
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using builder 3.2.2
+Using braintree 2.82.0
+Using bundler 2.1.4
+Using highline 1.7.1
+Using net-ssh 2.9.2
+Using net-scp 1.2.1
+Using net-sftp 2.0.2
+Using net-ssh-gateway 1.2.0
+Using capistrano 2.9.0.1
+Using capistrano-ext 1.2.1
+Using capistrano_colors 0.5.5
+Using hitimes 1.2.2
+Using timers 4.0.1
+Using celluloid 0.16.0
+Using ffi 1.13.1
+Using childprocess 0.5.6
+Using ci_reporter 1.6.2
+Using closure-compiler 1.1.11
+Using docile 1.1.5
+Using multi_json 1.13.1
+Using simplecov-html 0.8.0
+Using simplecov 0.9.1
+Using codeclimate-test-reporter 0.4.7
+Using coderay 1.1.0
+Using compass-rails 1.0.3
+Using cookiejar 0.3.2
+Using safe_yaml 1.0.4
+Using crack 0.4.2
+Using crass 1.0.2
+Using cssmin 1.0.3
+Using diff-lcs 1.2.5
+Using gherkin 2.9.3
+Using tins 1.3.5
+Using term-ansicolor 1.3.0
+Using cucumber 1.1.9
+Using cucumber-rails 0.3.3 from git@github.com:blurb/cucumber-rails.git (at rails-2.3.x@1afe5fa)
+Using cv-user-agent 1.0.2
+Using daemons 1.1.0
+Using database_cleaner 1.4.1
+Using multipart-post 1.2.0
+Using faraday 0.9.2
+Using jwt 1.5.6
+Using oauth2 1.4.0
+Using dropbox_api 0.1.19 from https://github.com/blurb/dropbox_api.git (at master@6acd8b8)
+Using ean13 1.4.0
+Using eventmachine 1.0.7
+Using em-socksify 0.3.0
+Using http_parser.rb 0.6.0
+Using em-http-request 1.0.3
+Using ezcrypto 0.7.2
+Using faraday_middleware 0.10.0
+Using thor 0.19.1
+Using foreman 0.78.0
+Using forgery 0.5.0
+Using gruff 0.1.2
+Using rb-fsevent 0.9.4
+Using rb-inotify 0.9.5
+Using listen 2.10.0
+Using guard 1.4.0
+Using guard-jasmine 1.14.0
+Using guard-rspec 1.2.1
+Using guard-shell 0.6.1
+Using spork 0.8.4
+Using guard-spork 1.4.3
+Using guid 0.1.1
+Using haml 3.1.8
+Using happening 0.2.5
+Using hashie 2.0.5
+Using headless 2.3.1 from https://github.com/leonid-shevtsov/headless.git (at master@d02237c)
+Using hoe 3.13.1
+Using honeypot-captcha 0.0.2
+Using htmlentities 4.3.0
+Using httpclient 2.1.7.2
+Using i18n-js 2.1.2
+Using iconv 1.1.0
+Using inflection 1.0.0
+Using jsmin 1.0.1
+Using jammit 0.6.5 from https://github.com/blurb/jammit.git (at master@2185802)
+Using jasmine-core 1.3.1
+Using rspec 1.3.2
+Using websocket 1.2.1
+Using libwebsocket 0.1.8
+Using rubyzip 0.9.4
+Using selenium-webdriver 2.26.0
+Using jasmine 1.3.2
+Using jnunemaker-validatable 1.8.1
+Using koala 1.0.0
+Using launchy 2.4.3
+Using systemu 2.6.5
+Using macaddr 1.7.1
+Using machinist 1.0.4
+Using machinist_callbacks 0.2.0
+Using metaclass 0.0.4
+Using method_source 0.8.2
+Using mime-types 1.16
+Using mini_exiftool 1.0.2
+Using mocha 0.12.10
+Using murder 0.1.2.4 from https://github.com/blurb/murder.git (at master@e90cd7e)
+Using newrelic_rpm 3.14.2.312
+Using nokogumbo 1.4.1
+Using sawyer 0.7.0
+Using octokit 4.3.0
+Using omniauth 1.3.1
+Using omniauth-oauth2 1.4.0
+Using omniauth-facebook 3.0.0
+Using open_uri_redirections 0.2.1
+Using paperclip 2.3.1
+Using parallel 1.6.1
+Using parallel_tests 1.6.1
+Using parser 2.3.1.2
+Using pg 1.3.5
+Using powerpack 0.1.1
+Using slop 3.6.0
+Using pry 0.10.1
+Using pry-remote 0.1.8
+Using pry-stack_explorer 0.4.9.2
+Using rack-test 0.6.3
+Using railslts-version 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using railties 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rails 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rainbow 2.1.0
+Using rash 0.4.0
+Using rdoc 4.1.2
+Using redcarpet 2.2.2
+Using redis 3.2.1
+Using rest-client 1.6.9
+Using retriable 1.3.2 from https://github.com/blurb/retriable.git (at master@177cc81)
+Using rexml 3.1.9.1
+Using rmagick 4.3.0
+Using rspec-rails 1.3.4
+Using ruby-progressbar 1.8.1
+Using unicode-display_width 0.3.1
+Using rubocop 0.37.2
+Using rubocop-checkstyle_formatter 0.2.0
+Using ruby-graphviz 1.0.0
+Using ruby-hmac 0.4.0
+Using ruby-mws 0.1.9 from https://github.com/blurb/ruby-mws.git (at master@632923a)
+Using ruby-prof 1.6.3
+Using sanitize 4.0.0
+Using seedbank 0.3.0 from https://github.com/blurb/seedbank.git (at master@2305a86)
+Using shoulda 2.11.3
+Using soap4r-ruby1.9 2.0.5
+Using statsd-ruby 0.3.0.github.2 from git@github.com:blurb/statsd-ruby.git (at master@7627490)
+Using stoplight 1.2.0
+Using style 0.1.0 from git@github.com:blurb/style.git (at master@5105aee)
+Using sudothinker-eeepub 0.6.1
+Using suid 1.0.1
+Using test-unit 1.2.3
+Using thin 1.8.2
+Using tilt 1.3.7
+Using timecop 0.7.1
+Using timocratic-test_benchmark 0.4.3
+Using twilio-ruby 3.2.0
+Using uuid 2.3.7
+Using webmock 1.21.0
+Using webrat 0.7.1
+Using wicked_pdf 1.1.0
+Using will_paginate 2.3.16
+Using wkhtmltopdf-binary 0.12.3.1
+Using xml-simple 1.1.4
+Using yard 0.9.37
+Using yui-compressor 0.9.6
+Using zendesk_api 1.2.4
+Bundle complete! 119 Gemfile dependencies, 207 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+➜  blurby git:(upgrade) ✗ bundler -v
+Bundler version 2.1.4
+➜  blurby git:(upgrade) ✗ gem uninstall bundler -v 2.1.4
+Gem bundler-2.1.4 cannot be uninstalled because it is a default gem
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+You must use Bundler 2 or greater with this lockfile.
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+Using rake 10.3.2
+Using Platform 0.4.0
+Using open4 1.3.0
+Using POpen4 0.1.4
+Using RedCloth 4.2.9
+Using aasm 4.1.0
+Using activesupport 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rack 1.2.8
+Using actionpack 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using actionmailer 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using activerecord 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using activerecord-postgres-hstore 0.6.0 from https://github.com/blurb/activerecord-postgres-hstore.git (at old_rails_fix@78ed04d)
+Using activeresource 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using acts_as_list 0.1.4
+Using acts_as_tree 0.1.1
+Using addressable 2.4.0
+Using chunky_png 1.3.4
+Using fssm 0.2.10
+Using sass 3.2.19
+Using compass 0.12.7
+Using animation 0.1.alpha.3
+Using io-like 0.3.0
+Using archive-zip 0.6.0
+Using ast 2.3.0
+Using json 1.8.5
+Using multi_xml 0.6.0
+Using httparty 0.13.3
+Using mini_portile2 2.8.8
+Using racc 1.8.1
+Using nokogiri 1.14.5 (arm64-darwin)
+Using uuidtools 2.1.5
+Using aws-sdk 1.6.9
+Using coffee-script-source 1.9.1.1
+Using execjs 2.0.2
+Using coffee-script 2.4.1
+Using barista 1.3.0
+Using i18n 0.7.0
+Using faker 1.4.3
+Using yajl-ruby 1.4.1
+Using bbf 1.0.78
+Using bcrypt 3.1.10
+Using bcrypt-ruby 3.1.5
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using builder 3.2.2
+Using braintree 2.82.0
+Using bundler 1.17.3
+Using highline 1.7.1
+Using net-ssh 2.9.2
+Using net-scp 1.2.1
+Using net-sftp 2.0.2
+Using net-ssh-gateway 1.2.0
+Using capistrano 2.9.0.1
+Using capistrano-ext 1.2.1
+Using capistrano_colors 0.5.5
+Using hitimes 1.2.2
+Using timers 4.0.1
+Using celluloid 0.16.0
+Using ffi 1.13.1
+Using childprocess 0.5.6
+Using ci_reporter 1.6.2
+Using closure-compiler 1.1.11
+Using docile 1.1.5
+Using multi_json 1.13.1
+Using simplecov-html 0.8.0
+Using simplecov 0.9.1
+Using codeclimate-test-reporter 0.4.7
+Using coderay 1.1.0
+Using compass-rails 1.0.3
+Using cookiejar 0.3.2
+Using safe_yaml 1.0.4
+Using crack 0.4.2
+Using crass 1.0.2
+Using cssmin 1.0.3
+Using diff-lcs 1.2.5
+Using gherkin 2.9.3
+Using tins 1.3.5
+Using term-ansicolor 1.3.0
+Using cucumber 1.1.9
+Using cucumber-rails 0.3.3 from git@github.com:blurb/cucumber-rails.git (at rails-2.3.x@1afe5fa)
+Using cv-user-agent 1.0.2
+Using daemons 1.1.0
+Using database_cleaner 1.4.1
+Using multipart-post 1.2.0
+Using faraday 0.9.2
+Using jwt 1.5.6
+Using oauth2 1.4.0
+Using dropbox_api 0.1.19 from https://github.com/blurb/dropbox_api.git (at master@6acd8b8)
+Using ean13 1.4.0
+Using eventmachine 1.0.7
+Using em-socksify 0.3.0
+Using http_parser.rb 0.6.0
+Using em-http-request 1.0.3
+Using ezcrypto 0.7.2
+Using faraday_middleware 0.10.0
+Using thor 0.19.1
+Using foreman 0.78.0
+Using forgery 0.5.0
+Using gruff 0.1.2
+Using rb-fsevent 0.9.4
+Using rb-inotify 0.9.5
+Using listen 2.10.0
+Using guard 1.4.0
+Using guard-jasmine 1.14.0
+Using guard-rspec 1.2.1
+Using guard-shell 0.6.1
+Using spork 0.8.4
+Using guard-spork 1.4.3
+Using guid 0.1.1
+Using haml 3.1.8
+Using happening 0.2.5
+Using hashie 2.0.5
+Using headless 2.3.1 from https://github.com/leonid-shevtsov/headless.git (at master@d02237c)
+Using hoe 3.13.1
+Using honeypot-captcha 0.0.2
+Using htmlentities 4.3.0
+Using httpclient 2.1.7.2
+Using i18n-js 2.1.2
+Using iconv 1.1.0
+Using inflection 1.0.0
+Using jsmin 1.0.1
+Using jammit 0.6.5 from https://github.com/blurb/jammit.git (at master@2185802)
+Using jasmine-core 1.3.1
+Using rspec 1.3.2
+Using websocket 1.2.1
+Using libwebsocket 0.1.8
+Using rubyzip 0.9.4
+Using selenium-webdriver 2.26.0
+Using jasmine 1.3.2
+Using jnunemaker-validatable 1.8.1
+Using koala 1.0.0
+Using launchy 2.4.3
+Using systemu 2.6.5
+Using macaddr 1.7.1
+Using machinist 1.0.4
+Using machinist_callbacks 0.2.0
+Using metaclass 0.0.4
+Using method_source 0.8.2
+Using mime-types 1.16
+Using mini_exiftool 1.0.2
+Using mocha 0.12.10
+Using murder 0.1.2.4 from https://github.com/blurb/murder.git (at master@e90cd7e)
+Using newrelic_rpm 3.14.2.312
+Using nokogumbo 1.4.1
+Using sawyer 0.7.0
+Using octokit 4.3.0
+Using omniauth 1.3.1
+Using omniauth-oauth2 1.4.0
+Using omniauth-facebook 3.0.0
+Using open_uri_redirections 0.2.1
+Using paperclip 2.3.1
+Using parallel 1.6.1
+Using parallel_tests 1.6.1
+Using parser 2.3.1.2
+Using pg 1.3.5
+Using powerpack 0.1.1
+Using slop 3.6.0
+Using pry 0.10.1
+Using pry-remote 0.1.8
+Using pry-stack_explorer 0.4.9.2
+Using rack-test 0.6.3
+Using railslts-version 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using railties 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rails 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rainbow 2.1.0
+Using rash 0.4.0
+Using rdoc 4.1.2
+Using redcarpet 2.2.2
+Using redis 3.2.1
+Using rest-client 1.6.9
+Using retriable 1.3.2 from https://github.com/blurb/retriable.git (at master@177cc81)
+Using rexml 3.1.9.1
+Using rmagick 4.3.0
+Using rspec-rails 1.3.4
+Using ruby-progressbar 1.8.1
+Using unicode-display_width 0.3.1
+Using rubocop 0.37.2
+Using rubocop-checkstyle_formatter 0.2.0
+Using ruby-graphviz 1.0.0
+Using ruby-hmac 0.4.0
+Using ruby-mws 0.1.9 from https://github.com/blurb/ruby-mws.git (at master@632923a)
+Using ruby-prof 1.6.3
+Using sanitize 4.0.0
+Using seedbank 0.3.0 from https://github.com/blurb/seedbank.git (at master@2305a86)
+Using shoulda 2.11.3
+Using soap4r-ruby1.9 2.0.5
+Using statsd-ruby 0.3.0.github.2 from git@github.com:blurb/statsd-ruby.git (at master@7627490)
+Using stoplight 1.2.0
+Using style 0.1.0 from git@github.com:blurb/style.git (at master@5105aee)
+Using sudothinker-eeepub 0.6.1
+Using suid 1.0.1
+Using test-unit 1.2.3
+Using thin 1.8.2
+Using tilt 1.3.7
+Using timecop 0.7.1
+Using timocratic-test_benchmark 0.4.3
+Using twilio-ruby 3.2.0
+Using uuid 2.3.7
+Using webmock 1.21.0
+Using webrat 0.7.1
+Using wicked_pdf 1.1.0
+Using will_paginate 2.3.16
+Using wkhtmltopdf-binary 0.12.3.1
+Using xml-simple 1.1.4
+Using yard 0.9.37
+Using yui-compressor 0.9.6
+Using zendesk_api 1.2.4
+Bundle complete! 119 Gemfile dependencies, 207 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+Using rake 10.3.2
+Using Platform 0.4.0
+Using open4 1.3.0
+Using POpen4 0.1.4
+Using RedCloth 4.2.9
+Using aasm 4.1.0
+Using activesupport 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rack 1.2.8
+Using actionpack 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using actionmailer 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using activerecord 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using activerecord-postgres-hstore 0.6.0 from https://github.com/blurb/activerecord-postgres-hstore.git (at old_rails_fix@78ed04d)
+Using activeresource 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using acts_as_list 0.1.4
+Using acts_as_tree 0.1.1
+Using addressable 2.4.0
+Using chunky_png 1.3.4
+Using fssm 0.2.10
+Using sass 3.2.19
+Using compass 0.12.7
+Using animation 0.1.alpha.3
+Using io-like 0.3.0
+Using archive-zip 0.6.0
+Using ast 2.3.0
+Using json 1.8.5
+Using multi_xml 0.6.0
+Using httparty 0.13.3
+Using mini_portile2 2.8.8
+Using racc 1.8.1
+Using nokogiri 1.14.5 (arm64-darwin)
+Using uuidtools 2.1.5
+Using aws-sdk 1.6.9
+Using coffee-script-source 1.9.1.1
+Using execjs 2.0.2
+Using coffee-script 2.4.1
+Using barista 1.3.0
+Using i18n 0.7.0
+Using faker 1.4.3
+Using yajl-ruby 1.4.1
+Using bbf 1.0.78
+Using bcrypt 3.1.10
+Using bcrypt-ruby 3.1.5
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using builder 3.2.2
+Using braintree 2.82.0
+Using bundler 1.17.3
+Using highline 1.7.1
+Using net-ssh 2.9.2
+Using net-scp 1.2.1
+Using net-sftp 2.0.2
+Using net-ssh-gateway 1.2.0
+Using capistrano 2.9.0.1
+Using capistrano-ext 1.2.1
+Using capistrano_colors 0.5.5
+Using hitimes 1.2.2
+Using timers 4.0.1
+Using celluloid 0.16.0
+Using ffi 1.13.1
+Using childprocess 0.5.6
+Using ci_reporter 1.6.2
+Using closure-compiler 1.1.11
+Using docile 1.1.5
+Using multi_json 1.13.1
+Using simplecov-html 0.8.0
+Using simplecov 0.9.1
+Using codeclimate-test-reporter 0.4.7
+Using coderay 1.1.0
+Using compass-rails 1.0.3
+Using cookiejar 0.3.2
+Using safe_yaml 1.0.4
+Using crack 0.4.2
+Using crass 1.0.2
+Using cssmin 1.0.3
+Using diff-lcs 1.2.5
+Using gherkin 2.9.3
+Using tins 1.3.5
+Using term-ansicolor 1.3.0
+Using cucumber 1.1.9
+Using cucumber-rails 0.3.3 from git@github.com:blurb/cucumber-rails.git (at rails-2.3.x@1afe5fa)
+Using cv-user-agent 1.0.2
+Using daemons 1.1.0
+Using database_cleaner 1.4.1
+Using multipart-post 1.2.0
+Using faraday 0.9.2
+Using jwt 1.5.6
+Using oauth2 1.4.0
+Using dropbox_api 0.1.19 from https://github.com/blurb/dropbox_api.git (at master@6acd8b8)
+Using ean13 1.4.0
+Using eventmachine 1.0.7
+Using em-socksify 0.3.0
+Using http_parser.rb 0.6.0
+Using em-http-request 1.0.3
+Using ezcrypto 0.7.2
+Using faraday_middleware 0.10.0
+Using thor 0.19.1
+Using foreman 0.78.0
+Using forgery 0.5.0
+Using gruff 0.1.2
+Using rb-fsevent 0.9.4
+Using rb-inotify 0.9.5
+Using listen 2.10.0
+Using guard 1.4.0
+Using guard-jasmine 1.14.0
+Using guard-rspec 1.2.1
+Using guard-shell 0.6.1
+Using spork 0.8.4
+Using guard-spork 1.4.3
+Using guid 0.1.1
+Using haml 3.1.8
+Using happening 0.2.5
+Using hashie 2.0.5
+Using headless 2.3.1 from https://github.com/leonid-shevtsov/headless.git (at master@d02237c)
+Using hoe 3.13.1
+Using honeypot-captcha 0.0.2
+Using htmlentities 4.3.0
+Using httpclient 2.1.7.2
+Using i18n-js 2.1.2
+Using iconv 1.1.0
+Using inflection 1.0.0
+Using jsmin 1.0.1
+Using jammit 0.6.5 from https://github.com/blurb/jammit.git (at master@2185802)
+Using jasmine-core 1.3.1
+Using rspec 1.3.2
+Using websocket 1.2.1
+Using libwebsocket 0.1.8
+Using rubyzip 0.9.4
+Using selenium-webdriver 2.26.0
+Using jasmine 1.3.2
+Using jnunemaker-validatable 1.8.1
+Using koala 1.0.0
+Using launchy 2.4.3
+Using systemu 2.6.5
+Using macaddr 1.7.1
+Using machinist 1.0.4
+Using machinist_callbacks 0.2.0
+Using metaclass 0.0.4
+Using method_source 0.8.2
+Using mime-types 1.16
+Using mini_exiftool 1.0.2
+Using mocha 0.12.10
+Using murder 0.1.2.4 from https://github.com/blurb/murder.git (at master@e90cd7e)
+Using newrelic_rpm 3.14.2.312
+Using nokogumbo 1.4.1
+Using sawyer 0.7.0
+Using octokit 4.3.0
+Using omniauth 1.3.1
+Using omniauth-oauth2 1.4.0
+Using omniauth-facebook 3.0.0
+Using open_uri_redirections 0.2.1
+Using paperclip 2.3.1
+Using parallel 1.6.1
+Using parallel_tests 1.6.1
+Using parser 2.3.1.2
+Using pg 1.3.5
+Using powerpack 0.1.1
+Using slop 3.6.0
+Using pry 0.10.1
+Using pry-remote 0.1.8
+Using pry-stack_explorer 0.4.9.2
+Using rack-test 0.6.3
+Using railslts-version 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using railties 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rails 2.3.18.58 from https://github.com/blurb/rails.git (at 8b7d676@8b7d676)
+Using rainbow 2.1.0
+Using rash 0.4.0
+Using rdoc 4.1.2
+Using redcarpet 2.2.2
+Using redis 3.2.1
+Using rest-client 1.6.9
+Using retriable 1.3.2 from https://github.com/blurb/retriable.git (at master@177cc81)
+Using rexml 3.1.9.1
+Using rmagick 4.3.0
+Using rspec-rails 1.3.4
+Using ruby-progressbar 1.8.1
+Using unicode-display_width 0.3.1
+Using rubocop 0.37.2
+Using rubocop-checkstyle_formatter 0.2.0
+Using ruby-graphviz 1.0.0
+Using ruby-hmac 0.4.0
+Using ruby-mws 0.1.9 from https://github.com/blurb/ruby-mws.git (at master@632923a)
+Using ruby-prof 1.6.3
+Using sanitize 4.0.0
+Using seedbank 0.3.0 from https://github.com/blurb/seedbank.git (at master@2305a86)
+Using shoulda 2.11.3
+Using soap4r-ruby1.9 2.0.5
+Using statsd-ruby 0.3.0.github.2 from git@github.com:blurb/statsd-ruby.git (at master@7627490)
+Using stoplight 1.2.0
+Using style 0.1.0 from git@github.com:blurb/style.git (at master@5105aee)
+Using sudothinker-eeepub 0.6.1
+Using suid 1.0.1
+Using test-unit 1.2.3
+Using thin 1.8.2
+Using tilt 1.3.7
+Using timecop 0.7.1
+Using timocratic-test_benchmark 0.4.3
+Using twilio-ruby 3.2.0
+Using uuid 2.3.7
+Using webmock 1.21.0
+Using webrat 0.7.1
+Using wicked_pdf 1.1.0
+Using will_paginate 2.3.16
+Using wkhtmltopdf-binary 0.12.3.1
+Using xml-simple 1.1.4
+Using yard 0.9.37
+Using yui-compressor 0.9.6
+Using zendesk_api 1.2.4
+Bundle complete! 119 Gemfile dependencies, 207 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "rack":
+  In snapshot (Gemfile.lock):
+    rack (= 1.2.8)
+
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      actionpack (= 3.2.22.5) was resolved to 3.2.22.5, which depends on
+        rack (~> 1.4.5)
+
+    jasmine (~> 1.3.2) was resolved to 1.3.2, which depends on
+      rack (~> 1.0)
+
+    omniauth-facebook was resolved to 3.0.0, which depends on
+      omniauth-oauth2 (~> 1.2) was resolved to 1.4.0, which depends on
+        oauth2 (~> 1.0) was resolved to 1.4.0, which depends on
+          rack (>= 1.2, < 3)
+
+    rspec-rails (= 1.3.4) was resolved to 1.3.4, which depends on
+      rack (>= 1.0.0)
+
+    thin (= 1.8.2) was resolved to 1.8.2, which depends on
+      rack (>= 1, < 3)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "rack":
+  In snapshot (Gemfile.lock):
+    rack (= 1.2.8)
+
+  In Gemfile:
+    rails was resolved to 3.2.22.5, which depends on
+      actionpack (= 3.2.22.5) was resolved to 3.2.22.5, which depends on
+        rack (~> 1.4.5)
+
+    dropbox_api (~> 0.1.19) was resolved to 0.1.19, which depends on
+      oauth2 (~> 1.1) was resolved to 1.4.0, which depends on
+        rack (>= 1.2, < 3)
+
+    omniauth was resolved to 1.3.1, which depends on
+      rack (>= 1.0, < 3)
+
+    webrat (= 0.7.1) was resolved to 0.7.1, which depends on
+      rack (>= 1.0)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Bundler could not find compatible versions for gem "rdoc":
+  In snapshot (Gemfile.lock):
+    rdoc (= 4.1.2)
+
+  In Gemfile:
+    rdoc (= 4.1.2)
+
+    rails was resolved to 3.2.22.5, which depends on
+      railties (= 3.2.22.5) was resolved to 3.2.22.5, which depends on
+        rdoc (~> 3.4)
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.
+➜  blurby git:(upgrade) ✗ bundle _1.17.3_ install
+Executing Gemfile in RAILS 3 mode
+Fetching https://github.com/rails/rails.git
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching source index from http://repo.blurb.com/gem_repo/
+Fetching gem metadata from http://rubygems.org/.........
+Fetching source index from http://rubygems.org/
+Resolving dependencies...
+Using rake 10.3.2
+Using Platform 0.4.0
+Using open4 1.3.0
+Using POpen4 0.1.4
+Using RedCloth 4.2.9
+Using aasm 4.1.0
+Using i18n 0.7.0
+Using multi_json 1.13.1
+Using activesupport 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using builder 3.2.2
+Using activemodel 3.2.22.5 from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using erubis 2.7.0
+Fetching journey 1.0.4
+Installing journey 1.0.4
+Fetching rack 1.4.7 (was 1.2.8)
+Installing rack 1.4.7 (was 1.2.8)
+Fetching rack-cache 1.17.0
+Installing rack-cache 1.17.0
+Using rack-test 0.6.3
+Fetching hike 1.2.3
+Installing hike 1.2.3
+Using tilt 1.3.7
+Fetching sprockets 2.2.3
+Installing sprockets 2.2.3
+Using actionpack 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using mime-types 1.16
+Fetching polyglot 0.3.5
+Installing polyglot 0.3.5
+Fetching treetop 1.4.15
+Installing treetop 1.4.15
+Fetching mail 2.5.5
+Installing mail 2.5.5
+Using actionmailer 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Fetching arel 3.0.3
+Installing arel 3.0.3
+Fetching tzinfo 0.3.62
+Installing tzinfo 0.3.62
+Using activerecord 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using activerecord-postgres-hstore 0.6.0 from https://github.com/blurb/activerecord-postgres-hstore.git (at old_rails_fix@78ed04d)
+Using activeresource 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using acts_as_list 0.1.4
+Using acts_as_tree 0.1.1
+Using addressable 2.4.0
+Using chunky_png 1.3.4
+Using fssm 0.2.10
+Using sass 3.2.19
+Using compass 0.12.7
+Using animation 0.1.alpha.3
+Using io-like 0.3.0
+Using archive-zip 0.6.0
+Using ast 2.3.0
+Using json 1.8.5
+Using multi_xml 0.6.0
+Using httparty 0.13.3
+Using mini_portile2 2.8.8
+Using racc 1.8.1
+Using nokogiri 1.14.5 (arm64-darwin)
+Using uuidtools 2.1.5
+Using aws-sdk 1.6.9
+Using coffee-script-source 1.9.1.1
+Using execjs 2.0.2
+Using coffee-script 2.4.1
+Using barista 1.3.0
+Using faker 1.4.3
+Using yajl-ruby 1.4.1
+Using bbf 1.0.78
+Using bcrypt 3.1.10
+Using bcrypt-ruby 3.1.5
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using braintree 2.82.0
+Using bundler 1.17.3
+Using highline 1.7.1
+Using net-ssh 2.9.2
+Using net-scp 1.2.1
+Using net-sftp 2.0.2
+Using net-ssh-gateway 1.2.0
+Using capistrano 2.9.0.1
+Using capistrano-ext 1.2.1
+Using capistrano_colors 0.5.5
+Using hitimes 1.2.2
+Using timers 4.0.1
+Using celluloid 0.16.0
+Using ffi 1.13.1
+Using childprocess 0.5.6
+Using ci_reporter 1.6.2
+Using closure-compiler 1.1.11
+Using docile 1.1.5
+Using simplecov-html 0.8.0
+Using simplecov 0.9.1
+Using codeclimate-test-reporter 0.4.7
+Using coderay 1.1.0
+Using compass-rails 1.0.3
+Using cookiejar 0.3.2
+Using safe_yaml 1.0.4
+Using crack 0.4.2
+Using crass 1.0.2
+Using cssmin 1.0.3
+Using diff-lcs 1.2.5
+Using gherkin 2.9.3
+Using tins 1.3.5
+Using term-ansicolor 1.3.0
+Using cucumber 1.1.9
+Using cucumber-rails 0.3.3 from git@github.com:blurb/cucumber-rails.git (at rails-2.3.x@1afe5fa)
+Using cv-user-agent 1.0.2
+Using daemons 1.1.0
+Using database_cleaner 1.4.1
+Using ean13 1.4.0
+Using eventmachine 1.0.7
+Using em-socksify 0.3.0
+Using http_parser.rb 0.6.0
+Using em-http-request 1.0.3
+Using ezcrypto 0.7.2
+Using multipart-post 1.2.0
+Using faraday 0.9.2
+Using faraday_middleware 0.10.0
+Using thor 0.19.1
+Using foreman 0.78.0
+Using forgery 0.5.0
+Using gruff 0.1.2
+Using rb-fsevent 0.9.4
+Using rb-inotify 0.9.5
+Using listen 2.10.0
+Using guard 1.4.0
+Using guard-shell 0.6.1
+Using spork 0.8.4
+Using guard-spork 1.4.3
+Using guid 0.1.1
+Using haml 3.1.8
+Using happening 0.2.5
+Using hashie 2.0.5
+Using headless 2.3.1 from https://github.com/leonid-shevtsov/headless.git (at master@d02237c)
+Using hoe 3.13.1
+Using honeypot-captcha 0.0.2
+Using htmlentities 4.3.0
+Using httpclient 2.1.7.2
+Using i18n-js 2.1.2
+Using iconv 1.1.0
+Using inflection 1.0.0
+Using jsmin 1.0.1
+Using jammit 0.6.5 from https://github.com/blurb/jammit.git (at master@2185802)
+Using jnunemaker-validatable 1.8.1
+Using jwt 1.5.6
+Using koala 1.0.0
+Using launchy 2.4.3
+Using websocket 1.2.1
+Using libwebsocket 0.1.8
+Using systemu 2.6.5
+Using macaddr 1.7.1
+Using machinist 1.0.4
+Using machinist_callbacks 0.2.0
+Using metaclass 0.0.4
+Using method_source 0.8.2
+Using mini_exiftool 1.0.2
+Using mocha 0.12.10
+Using murder 0.1.2.4 from https://github.com/blurb/murder.git (at master@e90cd7e)
+Using newrelic_rpm 3.14.2.312
+Using nokogumbo 1.4.1
+Using sawyer 0.7.0
+Using octokit 4.3.0
+Using open_uri_redirections 0.2.1
+Using paperclip 2.3.1
+Using parallel 1.6.1
+Using parallel_tests 1.6.1
+Using parser 2.3.1.2
+Using pg 1.3.5
+Using powerpack 0.1.1
+Using slop 3.6.0
+Using pry 0.10.1
+Using pry-remote 0.1.8
+Using pry-stack_explorer 0.4.9.2
+Fetching rack-ssl 1.3.4
+Installing rack-ssl 1.3.4
+Fetching rdoc 3.12.2 (was 4.1.2)
+Installing rdoc 3.12.2 (was 4.1.2)
+Using railties 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using rails 3.2.22.5 (was 2.3.18.58) from https://github.com/rails/rails.git (at e17e25c@e17e25c)
+Using rainbow 2.1.0
+Using rash 0.4.0
+Using redcarpet 2.2.2
+Using redis 3.2.1
+Using rest-client 1.6.9
+Using retriable 1.3.2 from https://github.com/blurb/retriable.git (at master@177cc81)
+Using rexml 3.1.9.1
+Using rmagick 4.3.0
+Using ruby-progressbar 1.8.1
+Using unicode-display_width 0.3.1
+Using rubocop 0.37.2
+Using rubocop-checkstyle_formatter 0.2.0
+Using ruby-graphviz 1.0.0
+Using ruby-hmac 0.4.0
+Using ruby-mws 0.1.9 from https://github.com/blurb/ruby-mws.git (at master@632923a)
+Using ruby-prof 1.6.3
+Using rubyzip 0.9.4
+Using sanitize 4.0.0
+Using seedbank 0.3.0 from https://github.com/blurb/seedbank.git (at master@2305a86)
+Using selenium-webdriver 2.26.0
+Using shoulda 2.11.3
+Using soap4r-ruby1.9 2.0.5
+Using statsd-ruby 0.3.0.github.2 from git@github.com:blurb/statsd-ruby.git (at master@7627490)
+Using stoplight 1.2.0
+Using style 0.1.0 from git@github.com:blurb/style.git (at master@5105aee)
+Using sudothinker-eeepub 0.6.1
+Using suid 1.0.1
+Using test-unit 1.2.3
+Using timecop 0.7.1
+Using timocratic-test_benchmark 0.4.3
+Using twilio-ruby 3.2.0
+Using uuid 2.3.7
+Using webmock 1.21.0
+Using wicked_pdf 1.1.0
+Using will_paginate 2.3.16
+Using wkhtmltopdf-binary 0.12.3.1
+Using xml-simple 1.1.4
+Using yard 0.9.37
+Using yui-compressor 0.9.6
+Using zendesk_api 1.2.4
+Bundle complete! 109 Gemfile dependencies, 205 gems now installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+Post-install message from rdoc:
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+<= 1.8.6 : unsupported
+ = 1.8.7 : gem install rdoc-data; rdoc-data --install
+ = 1.9.1 : gem install rdoc-data; rdoc-data --install
+>= 1.9.2 : nothing to do! Yay!
+Post-install message from seedbank:
+
+  ================================================================================
+
+  Rails 2.x
+  ---------
+  If you are using Seedbank with Rails 2.x you will need to place the following at
+  the end of your Rakefile so Rubygems can load the seedbank tasks;
+
+    require 'seedbank'
+    Seedbank.load_tasks if defined?(Seedbank)
+
+  Rails 3.x
+  ---------
+  Your work here is done!
+
+  ================================================================================

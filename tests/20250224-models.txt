@@ -1,0 +1,73 @@
+RAILS_ENV=test bundle exec spec spec/models
+Executing Gemfile in RAILS 2 mode
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/rspec-1.3.2/lib/spec/runner/options.rb:188: Use RbConfig instead of obsolete and deprecated Config.
+No server is running
+Running specs locally:
+[TRACING] Loading environment.rb
+[TRACING] after boot.rb : 1.428763118 seconds
+Endpoints file found: Domain is localhost, ME_PREFIX is 'dev' #Asset Hosts: 0
+Endpoints are {"river_url"=>"http://containerized-host:8095/river", "www_url"=>"http://dev.blurb.com:3000", "forums_url"=>nil, "photos_url"=>nil, "secure_url"=>"https://dev.blurb.com:3000", "uploads_url"=>"http://containerized-host:8080", "bookshow_url"=>"http://containerized-host:8080", "bookserve_url"=>"http://containerized-host:8080", "bookify_api_url"=>nil, "bookify_images_url"=>"http://containerized-host:3120/portkey", "bookify_uploads_url"=>nil, "isbn_service_url"=>"http://isbn-service:9024/isbn-service/", "order_service_url"=>"http://order-service:9022/product-service/", "product_service_url"=>"http://containerized-host:9022/product-service/", "shipping_service_url"=>"http://shipping-service:9008/shipping-service/", "feature_service_url"=>"http://feature-service:9004/feature-service", "auth_service_url"=>"http://containerized-host:9012/auth-service/", "upload_service_url"=>"http://upload-service:9100/", "pdf-processing_service_url"=>"http://pdf-processing-service:9110/pdf-processing-service/", "bookwizard_url"=>"http://bookwizard:9090", "printer-management_service_url"=>"http://192.168.64.1:9292/printer-management-service/"}
+[TRACING] after hostnames : 0.428605077 seconds
+[TRACING] after initial initializers : 0.003540921 seconds
+[TRACING] after hostname conversions : 5.0006e-05 seconds
+[TRACING] after active components setup : 0.001066047 seconds
+config.gem: Unpacked gem bbf-1.0.78 in vendor/gems has no specification file. Run 'rake gems:refresh_specs' to fix this.
+/home/rpi/code/makandra/rails/activesupport/lib/active_support/dependencies.rb:183:in `block in require': iconv will be deprecated in the future, use String#encode instead.
+
+Sphinx cannot be found on your system. You may need to configure the following
+settings in your config/sphinx.yml file:
+  * bin_path
+  * searchd_binary_name
+  * indexer_binary_name
+
+
+For more information, read the documentation:
+http://pat.github.io/thinking-sphinx/advanced_config.html
+
+SimpleCov enabled.
+[TRACING] after beginning after_initialize : 139.927074798 seconds
+[TRACING] after constants: 1.22833321 seconds
+[TRACING] after inflections : 5.792100114 seconds
+[TRACING] after patches : 7.300295591 seconds
+[TRACING] after riddle : 0.264967671 seconds
+[TRACING] after end of env : 117.424898157 seconds
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/test-unit-1.2.3/lib/test/unit/version.rb:5: warning: already initialized constant VERSION
+Example disabled: also destroys associated objects if the order is missing
+Example disabled: should queue an epub job if not already converted
+Example disabled: should not queue an epub job if it is already converted
+.............................................................................................................................................................................................FFFFFFFFFFFFFFFFFFFFFFFFFFFFF........[Braintree] [23/Feb/2025 17:56:55 UTC] GET /merchants/872hh2ts87cp6wzk/payment_method_nonces/payment_nonce 404
+........................F....................................................................................................................................WARNING:  there is already a transaction in progress
+WARNING:  there is no transaction in progress
+.WARNING:  there is already a transaction in progress
+WARNING:  there is no transaction in progress
+.WARNING:  there is already a transaction in progress
+WARNING:  there is no transaction in progress
+.WARNING:  there is already a transaction in progress
+WARNING:  there is no transaction in progress
+.WARNING:  there is already a transaction in progress
+WARNING:  there is no transaction in progress
+.WARNING:  there is already a transaction in progress
+WARNING:  there is no transaction in progress
+........................................................................................................................................................................................................................................................................................**.......................F..............................................................................FFFF...F.FFF......F..............................................................................................................FFFF.........................................................................................................................................FF........................................................................................................................................................................................................................................................................................................................................................................................................................................................................*.........................................................................................................................................*..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................************............................................................................................................................................................................................................................................................................................................FF...............................................................FF............*.*.....................................................................................................................................................................FFFFFFFF...................................................................................................F.F.FFF.F.................F..............F.F......................................................................F............./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+./home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:26: warning: removing `initialize' may cause serious problems
+/home/rpi/.rbenv/versions/1.9.3-p550/lib/ruby/gems/1.9.1/gems/mocha-0.12.10/lib/mocha/any_instance_method.rb:43: warning: removing `initialize' may cause serious problems
+........FF.........F.....F...F.........F.........F...F...F................................................F......F................................................................................F................**.......................................................FFF..FFFFFFF..FF.........................................F...FF......................................................F..FF..F..F.FF.F...............................................FF.....F...F.FF......FFF.FF..F...F......F...FF...................FF...............FFF..........................................................................................................................................F............................................................................................................................................................................................................*......................................................................^CCoverage report generated for RSpec to /home/rpi/code/blurby/coverage. 23003 / 36431 LOC (63.14%) covered.

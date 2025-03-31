@@ -1,0 +1,45 @@
+<Order xmlns="http://uos.rpiprint.com/xml/RPIOrderXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://uos.rpiprint.com/xml/RPIOrderXML http://uos.rpiprint.com/xml/RPIOrderXML-1-0.xsd" version="1.0">
+  <Sender>Blurb</Sender>
+  <CustomerID Division="standard">BookServe</CustomerID>
+  <OrderID>BS-STD-123456</OrderID>
+  <AltOrderID>EC123456</AltOrderID>
+  <OrderDate>2023-07-25T15:30:00-08:00</OrderDate>
+  <Priority></Priority>
+  <StatusUrl></StatusUrl>
+  <Currency>USD</Currency>
+  <Destination>
+    <DestinationID>Contact2</DestinationID>
+    <ShipMethod>UPS Ground</ShipMethod>
+    <Language>en</Language>
+    <Facility></Facility>
+    <ShipTo>
+      <Name>John Doe</Name>
+      <Address1>123 Main St</Address1>
+      <Address2></Address2>
+      <City>San Francisco</City>
+      <State>CA</State>
+      <Postal>94105</Postal>
+      <Country>USA</Country>
+      <Phone>415-555-1234</Phone>
+      <Email>john.doe@example.com</Email>
+    </ShipTo>
+    <RetailFreightCost>3.00</RetailFreightCost>
+    <TotalRetail>42.99</TotalRetail>
+  </Destination>
+  <OrderItems>
+    <Item>
+      <ItemID>job-BS-STD-123456</ItemID>
+      <DestinationRef>Contact2</DestinationRef>
+      <Sku>PocketBookIW_EconomyBWMatte_6by9</Sku>
+      <Quantity>1</Quantity>
+      <MediaOption></MediaOption>
+      <PageCount>200</PageCount>
+      <CoverImage>https://storage.example.com/cover_123456.pdf</CoverImage>
+      <Images>
+        <Image PageStart="1" PageEnd="200" Url="https://storage.example.com/text_123456.pdf" Rotation="0"></Image>
+      </Images>
+      <RetailPrice>42.99</RetailPrice>
+      <ItemDescription>Trade Book with Wireo Binding</ItemDescription>
+    </Item>
+  </OrderItems>
+</Order>

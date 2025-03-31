@@ -1,0 +1,415 @@
+Last login: Fri Mar 21 10:51:40 on ttys007
+➜  ~ ssh "johan.tique"@pdx-master-worker01.blurb.com
+^C
+➜  ~ ssh "johan.tique"@pdx-master-river01.blurb.com
+ssh: connect to host pdx-master-river01.blurb.com port 22: Operation timed out
+➜  ~ ssh "johan.tique"@pdx-core-engjump01.blurb.com
+johan.tique@pdx-core-engjump01.blurb.com's password:
+Last login: Fri Mar 21 14:48:31 2025 from 10.103.26.235
+-bash: warning: setlocale: LC_CTYPE: cannot change locale (UTF-8): No such file or directory
+[johan.tique@pdx-core-engjump01 ~]$ ssh pdx-master-bookserve01
+The authenticity of host 'pdx-master-bookserve01 (10.103.130.34)' can't be established.
+RSA key fingerprint is SHA256:rFr0jjGOxbfJ6IGuei6FlyJxPc6bbFbTc1f8Zi3PDCQ.
+RSA key fingerprint is MD5:27:bd:99:74:85:d3:66:8e:82:db:56:07:c1:2f:ee:2d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'pdx-master-bookserve01,10.103.130.34' (RSA) to the list of known hosts.
+johan.tique@pdx-master-bookserve01's password:
+Creating home directory for johan.tique.
+[johan.tique@pdx-master-bookserve01 ~]$
+[johan.tique@pdx-master-bookserve01 ~]$
+[johan.tique@pdx-master-bookserve01 ~]$ ls /
+bin   data  etc   lib    lost+found  mnt  proc  sbin     srv  temp  usr
+boot  dev   home  lib64  media       opt  root  selinux  sys  tmp   var
+[johan.tique@pdx-master-bookserve01 ~]$ vim S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+[johan.tique@pdx-master-bookserve01 ~]$ vim S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ vim S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ cat S3FileDownloader.java
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class S3FileDownloader {
+    public static void main(String[] args) {
+        // Validate that URL and destination file path are provided.
+        if (args.length != 2) {
+            System.out.println("Usage: java S3FileDownloader <fileURL> <destinationFile>");
+            return;
+        }
+        String fileURL = args[0];         // e.g., "http://your-bucket.s3.amazonaws.com/path/to/file.txt"
+        String destinationFile = args[1]; // e.g., "file.txt"
+        try {
+            URL url = new URL(fileURL);
+            HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+            int responseCode = httpConn.getResponseCode();
+
+            // Check for HTTP OK response.
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                InputStream inputStream = httpConn.getInputStream();
+                FileOutputStream outputStream = new FileOutputStream(destinationFile);
+
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                outputStream.close();
+                inputStream.close();
+                System.out.println("File downloaded to " + destinationFile);
+            } else {
+                System.out.println("No file to download. Server replied with code: " + responseCode);
+            }
+            httpConn.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+[johan.tique@pdx-master-bookserve01 ~]$ javac S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+S3FileDownloader.class  S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ java S3FileDownloader "https://master.builder.blurb.com/pdf-processing/files/P17726387-21a4c0708d0b03d1611fbf0a6f2bfbe81ae7ed1bdde0021a619e111877931896?Expires=1747285280" "downloadedFile.txt"
+javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:1959)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1077)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1339)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1323)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:468)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:338)
+	at S3FileDownloader.main(S3FileDownloader.java:18)
+[johan.tique@pdx-master-bookserve01 ~]$ java S3FileDownloader "https://master.builder.blurb.com/pdf-processing/files/P17726387-21a4c0708d0b03d1611fbf0a6f2bfbe81ae7ed1bdde0021a619e111877931896?Expires=1747285280" "downloadedFile.txt"
+javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:1959)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1077)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1339)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1323)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:468)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:338)
+	at S3FileDownloader.main(S3FileDownloader.java:18)
+[johan.tique@pdx-master-bookserve01 ~]$ java -version
+java version "1.7.0_45"
+Java(TM) SE Runtime Environment (build 1.7.0_45-b18)
+Java HotSpot(TM) 64-Bit Server VM (build 24.45-b08, mixed mode)
+[johan.tique@pdx-master-bookserve01 ~]$ uname -a
+Linux pdx-master-bookserve01.blurb.com 2.6.32-696.el6.x86_64 #1 SMP Tue Feb 21 00:53:17 EST 2017 x86_64 x86_64 x86_64 GNU/Linux
+[johan.tique@pdx-master-bookserve01 ~]$ vim certificateInspector.java
+[johan.tique@pdx-master-bookserve01 ~]$ javac certificateInspector.java
+certificateInspector.java:6: error: class CertificateInspector is public, should be declared in a file named CertificateInspector.java
+public class CertificateInspector {
+       ^
+1 error
+[johan.tique@pdx-master-bookserve01 ~]$ mv certificateInspector.java CertificateInspector.java
+[johan.tique@pdx-master-bookserve01 ~]$ javac CertificateInspector.java
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+CertificateInspector.class  CertificateInspector.java  S3FileDownloader.class  S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ java CertificateInspector
+javax.net.ssl.SSLException: Received fatal alert: protocol_version
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:154)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:1959)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1077)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1339)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1323)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:153)
+	at CertificateInspector.main(CertificateInspector.java:11)
+[johan.tique@pdx-master-bookserve01 ~]$ ls /home/
+atripathi  blurbapp  bversic  dryack  johan.tique  lost+found  tim.brown  tmiyake  tomcat
+[johan.tique@pdx-master-bookserve01 ~]$ ls /home/
+atripathi  bversic                      dryack       lost+found  tmiyake
+blurbapp   camiloandres.buitragoladino  johan.tique  tim.brown   tomcat
+[johan.tique@pdx-master-bookserve01 ~]$ java -Dhttps.protocols=TLSv1.2 S3FileDownloader "https://master.builder.blurb.com/pdf-processing/files/P17726387-21a4c0708d0b03d1611fbf0a6f2bfbe81ae7ed1bdde0021a619e111877931896?Expires=1747285280" "downloadedFile.txt"
+javax.net.ssl.SSLException: Received close_notify during handshake
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:208)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1884)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1837)
+	at sun.security.ssl.SSLSocketImpl.recvAlert(SSLSocketImpl.java:1938)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1077)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1339)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1323)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:468)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:338)
+	at S3FileDownloader.main(S3FileDownloader.java:18)
+[johan.tique@pdx-master-bookserve01 ~]$ top
+
+top - 15:26:06 up 26 days,  2:07,  2 users,  load average: 0.00, 0.00, 0.00
+Tasks: 217 total,   1 running, 216 sleeping,   0 stopped,   0 zombie
+Cpu(s): 50.0%us,  0.0%sy,  0.0%ni, 50.0%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   3924084k total,  3559972k used,   364112k free,   222916k buffers
+Swap:  3145724k total,   278684k used,  2867040k free,   756072k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+32231 johan.ti  20   0 27596 1532 1100 R 100.0  0.0   0:00.04 top
+    1 root      20   0 33672 1420 1184 S  0.0  0.0   0:04.80 init
+    2 root      20   0     0    0    0 S  0.0  0.0   0:00.00 kthreadd
+    3 root      RT   0     0    0    0 S  0.0  0.0   0:06.92 migration/0
+    4 root      20   0     0    0    0 S  0.0  0.0   0:12.02 ksoftirqd/0
+    5 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/0
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:01.28 watchdog/0
+    7 root      RT   0     0    0    0 S  0.0  0.0   0:06.66 migration/1
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/1
+    9 root      20   0     0    0    0 S  0.0  0.0   0:07.40 ksoftirqd/1
+   10 root      RT   0     0    0    0 S  0.0  0.0   0:01.03 watchdog/1
+   11 root      RT   0     0    0    0 S  0.0  0.0   0:06.25 migration/2
+   12 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/2
+   13 root      20   0     0    0    0 S  0.0  0.0   0:07.54 ksoftirqd/2
+   14 root      RT   0     0    0    0 S  0.0  0.0   0:00.95 watchdog/2
+   15 root      RT   0     0    0    0 S  0.0  0.0   0:05.97 migration/3
+   16 root      RT   0     0    0    0 S  0.0  0.0   0:00.00 stopper/3
+   17 root      20   0     0    0    0 S  0.0  0.0   0:07.77 ksoftirqd/3
+   18 root      RT   0     0    0    0 S  0.0  0.0   0:00.97 watchdog/3
+   19 root      20   0     0    0    0 S  0.0  0.0   0:47.29 events/0
+   20 root      20   0     0    0    0 S  0.0  0.0   0:43.49 events/1
+   21 root      20   0     0    0    0 S  0.0  0.0   0:52.56 events/2
+   22 root      20   0     0    0    0 S  0.0  0.0   1:07.70 events/3
+   23 root      20   0     0    0    0 S  0.0  0.0   0:00.00 events/0
+   24 root      20   0     0    0    0 S  0.0  0.0   0:00.00 events/1
+   25 root      20   0     0    0    0 S  0.0  0.0   0:00.00 events/2
+   26 root      20   0     0    0    0 S  0.0  0.0   0:00.00 events/3
+[johan.tique@pdx-master-bookserve01 ~]$ htop
+[johan.tique@pdx-master-bookserve01 ~]$ systemctl -h
+-bash: systemctl: command not found
+[johan.tique@pdx-master-bookserve01 ~]$ ls /etc/init.d/
+acpid             crond      kdump         netconsole  ntpdate      rpcbind     sentineld  udev-post
+atd               cups       killall       netfs       oddjobd      rpcgssd     single     xinetd
+auditd            functions  ktune         network     portreserve  rpcidmapd   sshd
+blk-availability  halt       lvm2-lvmetad  nfs         postfix      rpcsvcgssd  sssd
+bookwizard        ip6tables  lvm2-monitor  nfslock     rdisc        rsyslog     sysstat
+chronyd           iptables   mdmonitor     nfs-rdma    rdma         sandbox     tomcat6
+collector         jexec      messagebus    nginx       restorecond  saslauthd   tuned
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+CertificateInspector.class  CertificateInspector.java  S3FileDownloader.class  S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ vim S3FileDownloader2.java
+[johan.tique@pdx-master-bookserve01 ~]$ cat S3FileDownloader
+cat: S3FileDownloader: No such file or directory
+[johan.tique@pdx-master-bookserve01 ~]$ cat S3FileDownloader2.java
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocketFactory;
+
+public class S3FileDownloader2 {
+    public static void main(String[] args) {
+
+        if (args.length != 2) {
+            System.out.println("Usage: java S3FileDownloader <fileURL> <destinationFile>");
+            return;
+        }
+        String fileURL = args[0];
+        String destinationFile = args[1];
+
+        try {
+            URL url = new URL(fileURL);
+            HttpURLConnection httpConn;
+
+
+            if (fileURL.toLowerCase().startsWith("https")) {
+                SSLContext sc = SSLContext.getInstance("TLSv1.2");
+                sc.init(null, null, new java.security.SecureRandom());
+                SSLSocketFactory factory = sc.getSocketFactory();
+
+                HttpsURLConnection httpsConn = (HttpsURLConnection) url.openConnection();
+                httpsConn.setSSLSocketFactory(factory);
+                httpConn = httpsConn;
+            } else {
+                httpConn = (HttpURLConnection) url.openConnection();
+            }
+
+            int responseCode = httpConn.getResponseCode();
+
+
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                InputStream inputStream = httpConn.getInputStream();
+                FileOutputStream outputStream = new FileOutputStream(destinationFile);
+
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+
+                outputStream.close();
+                inputStream.close();
+                System.out.println("File downloaded to " + destinationFile);
+            } else {
+                System.out.println("No file to download. Server replied with code: " + responseCode);
+            }
+            httpConn.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+[johan.tique@pdx-master-bookserve01 ~]$ javac S3FileDownloader2.java
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+CertificateInspector.class  S3FileDownloader2.class  S3FileDownloader.class
+CertificateInspector.java   S3FileDownloader2.java   S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ java -Dhttps.protocols=TLSv1.2 S3FileDownloader2 "https://master.builder.blurb.com/pdf-processing/files/P17726387-21a4c0708d0b03d1611fbf0a6f2bfbe81ae7ed1bdde0021a619e111877931896?Expires=1747285280" "downloadedFile.txt"
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1884)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:276)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:270)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1341)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:153)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:868)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:804)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1016)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1312)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1339)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1323)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1300)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:468)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:338)
+	at S3FileDownloader2.main(S3FileDownloader2.java:36)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:385)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:292)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:326)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:126)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1323)
+	... 13 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:196)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:268)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:380)
+	... 19 more
+[johan.tique@pdx-master-bookserve01 ~]$ keytool
+-bash: keytool: command not found
+[johan.tique@pdx-master-bookserve01 ~]$ find / -name keytool 2>/dev/null
+/usr/lib/jvm/java-1.5.0-gcj-1.5.0.0/jre/bin/keytool
+/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.201.x86_64/jre/bin/keytool
+/usr/java/jdk1.7.0_45/bin/keytool
+/usr/java/jdk1.7.0_45/jre/bin/keytool
+^C
+[johan.tique@pdx-master-bookserve01 ~]$ /usr/java/jdk1.7.0_45/bin/keytool -list -v -keystore /usr/java/jdk1.7.0_45/jre/lib/security/cacerts
+Enter keystore password:  [johan.tique@pdx-master-bookserve01 ~]$
+[johan.tique@pdx-master-bookserve01 ~]$ wget
+wget: missing URL
+Usage: wget [OPTION]... [URL]...
+
+Try ‘wget --help’ for more options.
+[johan.tique@pdx-master-bookserve01 ~]$ wget https://www.amazontrust.com/repository/AmazonRootCA1.pem
+--2025-03-21 15:53:30--  https://www.amazontrust.com/repository/AmazonRootCA1.pem
+Resolving www.amazontrust.com... 18.172.153.35, 18.172.153.120, 18.172.153.10, ...
+Connecting to www.amazontrust.com|18.172.153.35|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1188 (1.2K) [text/plain]
+Saving to: “AmazonRootCA1.pem”
+
+100%[=====================================================================>] 1,188       --.-K/s   in 0s
+
+2025-03-21 15:53:30 (288 MB/s) - “AmazonRootCA1.pem” saved [1188/1188]
+
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+AmazonRootCA1.pem           CertificateInspector.java  S3FileDownloader2.java  S3FileDownloader.java
+CertificateInspector.class  S3FileDownloader2.class    S3FileDownloader.class
+[johan.tique@pdx-master-bookserve01 ~]$ vim CustomCertificateDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ cat CustomCertificateDownloader.java
+import javax.net.ssl.*;
+import java.io.*;
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.security.KeyStore;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+
+public class CustomCertificateDownloader {
+    public static void main(String[] args) throws Exception {
+        if (args.length != 3) {
+            System.out.println("Usage: java CustomCertificateDownloader <fileURL> <destinationFile> <certificateFile>");
+            return;
+        }
+        String fileURL = args[0];
+        String destinationFile = args[1];
+        String certificateFile = args[2];
+
+
+        CertificateFactory cf = CertificateFactory.getInstance("X.509");
+        InputStream caInput = new BufferedInputStream(new FileInputStream(certificateFile));
+        X509Certificate caCert;
+        try {
+            caCert = (X509Certificate) cf.generateCertificate(caInput);
+            System.out.println("Loaded CA certificate: " + caCert.getSubjectDN());
+        } finally {
+            caInput.close();
+        }
+
+
+        KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+        keyStore.load(null, null);
+        keyStore.setCertificateEntry("customCa", caCert);
+
+
+        TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+        tmf.init(keyStore);
+
+
+        SSLContext sslContext = SSLContext.getInstance("TLSv1.2");
+        sslContext.init(null, tmf.getTrustManagers(), null);
+
+
+        URL url = new URL(fileURL);
+        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+        conn.setSSLSocketFactory(sslContext.getSocketFactory());
+
+
+        int responseCode = conn.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            InputStream is = conn.getInputStream();
+            FileOutputStream fos = new FileOutputStream(destinationFile);
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = is.read(buffer)) != -1) {
+                fos.write(buffer, 0, bytesRead);
+            }
+            fos.close();
+            is.close();
+            System.out.println("File downloaded to " + destinationFile);
+        } else {
+            System.out.println("No file to download. Server replied with code: " + responseCode);
+        }
+        conn.disconnect();
+    }
+}
+[johan.tique@pdx-master-bookserve01 ~]$ javac C
+CertificateInspector.class        CertificateInspector.java         CustomCertificateDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ javac C
+CertificateInspector.class        CertificateInspector.java         CustomCertificateDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ javac CustomCertificateDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ ls
+AmazonRootCA1.pem           CustomCertificateDownloader.class  S3FileDownloader2.java
+CertificateInspector.class  CustomCertificateDownloader.java   S3FileDownloader.class
+CertificateInspector.java   S3FileDownloader2.class            S3FileDownloader.java
+[johan.tique@pdx-master-bookserve01 ~]$ java -Dhttps.protocols=TLSv1.2 CustomCertificateDownloader "https://master.builder.blurb.com/pdf-processing/files/P17726387-21a4c0708d0b03d1611fbf0a6f2bfbe81ae7ed1bdde0021a619e111877931896?Expires=1747285280" "downloadedFile.txt" "AmazonRootCA1.pem"
+Loaded CA certificate: CN=Amazon Root CA 1, O=Amazon, C=US
+No file to download. Server replied with code: 404
+[johan.tique@pdx-master-bookserve01 ~]$
+[johan.tique@pdx-master-bookserve01 ~]$
