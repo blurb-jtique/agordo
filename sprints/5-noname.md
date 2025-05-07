@@ -1,5 +1,7 @@
 # SPRINT 5 - NONAME
 
+Advance high-priority marketing initiatives by focusing on actionable investigations—Swatch Kits, Glossy/Matte cover types, and Wire-O binding support—alongside our groomed backlog. At the same time, initiate strategic alignment by drafting a 6–9 month roadmap framework to guide efforts in modernization, sustainability, new product/features, and AfterShip migration, based on evolving team capacity and upcoming resource additions.
+
 ## EPIC: Migrate AfterShip Integration to Latest API Version Before Sunset Date
 
 ### Description
@@ -251,3 +253,74 @@ Marketing is considering running "Buy One, Get Something" promotions—e.g., 50%
 ### 5. Estimate
 
 - Estimated effort: --
+
+---
+
+Here’s a breakdown of **story points**, estimated **days of effort**, and **people needed** for each of the three tickets (#42, #44, #43), based on the effort involved, risks, cross-team coordination, and technical depth.
+
+---
+
+## 🎯 Story Point & Resource Estimates
+
+| Ticket | Title | Story Points | Estimated Days | People Needed |
+|--------|-------|---------------|----------------|----------------|
+| **#42** | Update US and CA Tax Rates | **3** | **2–3 days** | 👨‍💻 1 engineer (Camilo or Johan)<br>👀 QA/manual tester (partial time) |
+| **#44** | Update VAT Taxes | **5** | **3–4 days** | 👨‍💻 1 engineer (Johan recommended due to logic check)<br>👀 1 reviewer (Patrick or Craig to confirm scope regarding prototype logic) |
+| **#43** | Update Exchange Rates | **8** | **4–5 days** | 👨‍💻 1 engineer (Johan or paired with Camilo)<br>🔧 1 DevOps support (for Jenkins + server restart)<br>👀 QA/manual tester<br>📊 Finance (Craig coordination)<br>🔁 BI & Platform (to monitor Amazon feeds + alerts) |
+
+---
+
+### 🧾 Ticket #42: Update US and CA Tax Rates
+
+- **Effort**: Straightforward, operational but minimal logic required.
+- **Tasks**:
+  - Format and load CSVs
+  - Test in all environments
+  - Validate tax mapping and rounding
+- **People**:
+  - 1 Developer for upload and test
+  - Partial QA for verification
+- **Risks**: Low, mostly test burden
+
+---
+
+### 🧾 Ticket #44: Update VAT Taxes in Blurby
+
+- **Effort**: Slightly more than 42 due to logic check around product-level rates
+- **Tasks**:
+  - Compare existing VAT setup with spreadsheet
+  - If needed, propose follow-up ticket for logic refactor
+  - Validate current system against expectations
+- **People**:
+  - Johan recommended due to context
+  - One stakeholder to validate interpretation (Craig, Patrick, or Finance)
+- **Risks**: Moderate, if rate differentiation becomes a blocker
+
+---
+
+### 🧾 Ticket #43: Update Exchange Rates for April
+
+- **Effort**: High operational complexity, Jenkins + Liquibase + alert tuning
+- **Tasks**:
+  - Update in both `shipping-service` and `blurby`
+  - Coordinate server restart, BI & Marketing notification
+  - Validate against Confluence instructions
+  - Adjust failing web tests and monitoring thresholds
+- **People**:
+  - 1 engineer full-time (ideally Johan, familiar with Jenkins & DB)
+  - DevOps (Ibrahim) for server restarts + DB oversight
+  - QA for test updates
+  - Craig to sync with Marketing/BI
+- **Risks**: High, if Jenkins fails or alerts aren’t tuned properly
+
+---
+
+## ⏳ Summary
+
+| Ticket | Points | Duration | Critical Collaborators |
+|--------|--------|----------|-------------------------|
+| **#42** | 3 | 2–3 days | QA, Engineer |
+| **#44** | 5 | 3–4 days | Engineer, Product/Finance |
+| **#43** | 8 | 4–5 days | Engineer, DevOps, BI, QA, Craig |
+
+Let me know if you want this summarized in a JIRA planning view or Excel-ready format!

@@ -59,6 +59,7 @@ https://github.blurb.com/devops/deploy/blob/pdx/bin/blurby.sh # access via LDAP
 sc.add_category("development", true).add_item("ab546075b564", "/admin/support/base", 'index')
 
 # preparing local test environment
+**20250504**
 
 psql -h 192.168.64.1 -p 25432 -U postgres -d blurb_test -f 202502121550-blurb_dev.sql
 psql -h 192.168.64.1 -p 25432 -U postgres -d blurb_test -f db/data/data_for_test.sql
@@ -67,6 +68,12 @@ psql -h 192.168.64.1 -p 25432 -U postgres -d blurb_test_b -f db/development_stru
 
 psql -h 192.168.64.1 -p 25432 -U postgres -d blurb_test_b -f ~/202502180919-blurb_production.sql
 psql -h 192.168.64.1 -p 25432 -U postgres -d blurb_test_b -f db/data/data_for_test.sql | grep error
+
+## for testing locally utm and postgres 11 - one shot
+
+psql -U postgres
+DROP DATABASE blurb_test_b;
+psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error
 
 # creating test db
 ## postgres 11
