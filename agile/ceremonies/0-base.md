@@ -1,4 +1,4 @@
-# General Guiding Principle for All Ceremonies
+# General Guiding Principle for Ceremonies and Processes
 
 * **Clear Purpose, Flexible Process:** The goals and purpose of each meeting must be clear to all participants. However, avoid creating an overly rigid process that stifles discussion. While having high-level agenda items is important, maintain an open-ended approach to allow for emergent topics and valuable conversation.
 
