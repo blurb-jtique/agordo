@@ -2,11 +2,11 @@
 
 This document outlines the specific Definition of Done (DoD) for each ticket type used by the Sustaining Engineering team. Meeting these criteria signifies that the work is complete, of high quality, and delivers on its intended objective.
 
-*(Refer to the general "Definition of Done (DoD) A Summary" document for overarching principles.)*
+Refer to the general "Definition of Done (DoD) A Summary" document for overarching principles.
 
 ## 1. DoD for: Feature
 
-*(New functionality or significant enhancement delivering user/business value)*
+New functionality or significant enhancement delivering user/business value
 
 **Goal:** The new feature is fully implemented, robustly tested, documented, and provides the agreed-upon value to users.
 
@@ -37,7 +37,7 @@ This document outlines the specific Definition of Done (DoD) for each ticket typ
 
 ## 2. DoD for: Bug
 
-*(A fix for a defect or failure in the production system)*
+A fix for a defect or failure in the production system
 
 **Goal:** The identified bug is resolved, the fix is verified, it does not introduce regressions, and the system is restored to correct behavior.
 
@@ -64,7 +64,7 @@ This document outlines the specific Definition of Done (DoD) for each ticket typ
 
 ## 3. DoD for: Hotfix
 
-*(An urgent fix for a critical production issue requiring immediate attention)*
+An urgent fix for a critical production issue requiring immediate attention
 
 **Goal:** The critical production issue is rapidly resolved or mitigated, system stability is restored, and the immediate risk is contained.
 
@@ -90,7 +90,7 @@ This document outlines the specific Definition of Done (DoD) for each ticket typ
 
 ## 4. DoD for: Spike
 
-*(Time-boxed investigation to reduce uncertainty or gather knowledge)*
+Time-boxed investigation to reduce uncertainty or gather knowledge
 
 **Goal:** The research question is answered, and the findings/learnings are clearly documented and shared, enabling future decision-making.
 
@@ -108,7 +108,7 @@ This document outlines the specific Definition of Done (DoD) for each ticket typ
 
 ## 5. DoD for: Operations
 
-*(Tasks like updating configurations, data fixups, scheduled maintenance)*
+Tasks like updating configurations, data fixups, scheduled maintenance
 
 **Goal:** The operational task is completed accurately, its outcome is verified, and the system remains stable and performs as expected.
 
@@ -128,7 +128,7 @@ This document outlines the specific Definition of Done (DoD) for each ticket typ
 
 ## 6. DoD for: Productivity
 
-*(Tasks improving team efficiency, system health, or developer experience)*
+Tasks improving team efficiency, system health, or developer experience
 
 **Goal:** The intended improvement is implemented, and its benefits are realized or clearly documented for future realization.
 
