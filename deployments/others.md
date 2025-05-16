@@ -76,6 +76,15 @@ DROP DATABASE blurb_test_b;
 psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error
 
 # creating test db
+
+## Mac postgres 11
+## postgres 11
+psql -p 25432 -d postgres -U postgres
+DROP DATABASE blurb_test_b;
+CREATE DATABASE blurb_test_b OWNER postgres;
+
+psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error
+
 ## postgres 11
 psql -h 192.168.64.1 -p 25432 -d postgres -U postgres
 DROP DATABASE blurb_test_b;

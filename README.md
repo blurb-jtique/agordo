@@ -15,6 +15,8 @@ Blurby is a book creation and publishing platform that allows users to create, d
 
 ```txt
 agordo/
+├── agile/                      # documentation about our way of work (practices, HL agenda, and similar)
+│   └── ceremonies/             # documentation about our ceremonies
 ├── blurb/                      # Core Blurb documentation
 ├── blurby/                     # Blurby service documentation
 ├── deployments/                # Deployment strategies and resources
@@ -26,11 +28,11 @@ agordo/
 │   └── res/                    # Supplemental resources for proposals
 ├── setup/                      # Environment setup instructions
 ├── sprints/                    # Sprint documentation and artifacts
-│   ├── 0-alpha.md             # Sprint naming conventions
-│   ├── 1-arche/               # Sprint 1 documentation
-│   ├── 2-hydor/               # Sprint 2 documentation
-│   ├── 3-dome/                # Sprint 3 documentation
-│   └── 4-diaplase/            # Sprint 4 documentation
+│   ├── 0-alpha.md              # Sprint naming conventions
+│   ├── 1-arche/                # Sprint 1 documentation
+│   ├── 2-hydor/                # Sprint 2 documentation
+│   ├── 3-dome/                 # Sprint 3 documentation
+│   └── 4-diaplase/             # Sprint 4 documentation
 ├── tests/                      # Testing documentation and strategies
 ├── troubleshooting/            # Common issues and solutions
 └── utils/                      # Utility documentation and resources
