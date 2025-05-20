@@ -76,6 +76,7 @@ Sec-Fetch-Site: same-origin
 traceparent: 00-0c845e9555529ded154acd2caa76d0c9-0850e773c8241876-01
 tracestate: 7501@nr=0-1-7501-772340294-0850e773c8241876----1741864932095
 ```
+
 ```json
 {
     "book_id": 12357124,
@@ -96,6 +97,7 @@ Accept: application/json, text/plain, */*
 Accept-Encoding: gzip, deflate, br
 Accept-Language: en-US,en;q=0.9
 ```
+
 ```json
 {
     "api_account": "blurb",
