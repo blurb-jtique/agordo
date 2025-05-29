@@ -162,3 +162,149 @@ bundle install
 ```sh
 brew install postgresql@11
 ```
+
+
+## Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
+
+If you run into compilation issues with gems like `eventmachine` or native extensions depending on OpenSSL or PG, especially on M chips, follow this guide to set up a parallel x86 (Intel) environment using Rosetta 2.
+
+### 1. Install Rosetta 2
+
+```sh
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+```
+
+### 2. Open a terminal in x86 mode
+
+```sh
+arch -x86_64 /bin/zsh
+```
+
+### 3. Install Intel Homebrew
+
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Add this to your `~/.zshrc`:
+
+```sh
+# Homebrew Intel (Rosetta)
+/usr/local/bin:$PATH
+```
+
+Reload your shell:
+
+```sh
+source ~/.zshrc
+```
+
+Verify:
+
+```sh
+arch -x86_64 brew --version
+```
+
+### 4. Install OpenSSL 1.1 manually
+
+```sh
+mkdir -p ~/src/openssl-1.1 && cd ~/src/openssl-1.1
+curl -LO https://www.openssl.org/source/old/1.1.1/openssl-1.1.1u.tar.gz
+tar xf openssl-1.1.1u.tar.gz
+cd openssl-1.1.1u
+arch -x86_64 ./Configure darwin64-x86_64-cc \
+  --prefix=$HOME/.local/openssl-1.1 \
+  --openssldir=$HOME/.local/openssl-1.1/ssl \
+  shared zlib
+arch -x86_64 make -j$(sysctl -n hw.ncpu)
+arch -x86_64 make install_sw
+```
+
+### 5. Install x86 dependencies via Intel Homebrew
+
+```sh
+arch -x86_64 brew update
+arch -x86_64 /usr/local/bin/brew install zlib libyaml readline gdbm pkgconf
+```
+
+### 6. Update `~/.zshrc` for x86 builds
+
+```sh
+if [ "$(uname -m)" = "x86_64" ]; then
+  export PATH="$HOME/.local/openssl-1.1/bin:$PATH"
+  export LDFLAGS="\
+    -L$HOME/.local/openssl-1.1/lib \
+    -L/usr/local/opt/zlib/lib \
+    -L/usr/local/opt/libyaml/lib \
+    -L/usr/local/opt/readline/lib \
+    -L/usr/local/opt/gdbm/lib"
+  export CPPFLAGS="\
+    -I$HOME/.local/openssl-1.1/include \
+    -I/usr/local/opt/zlib/include \
+    -I/usr/local/opt/libyaml/include \
+    -I/usr/local/opt/readline/include \
+    -I/usr/local/opt/gdbm/include"
+  export PKG_CONFIG_PATH="\
+    $HOME/.local/openssl-1.1/lib/pkgconfig:\
+    /usr/local/opt/zlib/lib/pkgconfig:\
+    /usr/local/opt/libyaml/lib/pkgconfig:\
+    /usr/local/opt/readline/lib/pkgconfig:\
+    /usr/local/opt/gdbm/lib/pkgconfig"
+  export RUBY_CONFIGURE_OPTS="\
+    --with-openssl-dir=$HOME/.local/openssl-1.1 \
+    --with-zlib-dir=/usr/local/opt/zlib \
+    --with-libyaml-dir=/usr/local/opt/libyaml \
+    --with-readline-dir=/usr/local/opt/readline \
+    --with-gdbm-dir=/usr/local/opt/gdbm"
+  export LDFLAGS="$LDFLAGS -L/usr/local/opt/libpq/lib -L/usr/local/opt/imagemagick/lib"
+  export CPPFLAGS="$CPPFLAGS -I/usr/local/opt/libpq/include -I/usr/local/opt/imagemagick/include/ImageMagick-7"
+  export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/usr/local/opt/libpq/lib/pkgconfig:/usr/local/opt/imagemagick/lib/pkgconfig"
+fi
+```
+
+Reload:
+
+```sh
+source ~/.zshrc
+```
+
+### 7. Install remaining dependencies
+
+```sh
+arch -x86_64 /usr/local/bin/brew install libpq imagemagick
+```
+
+### 8. Bundler Configuration
+
+```sh
+arch -x86_64 bundle config build.eventmachine --with-openssl-dir=$HOME/.local/openssl-1.1
+arch -x86_64 bundle config build.pg --with-pg-config=/usr/local/opt/libpq/bin/pg_config
+arch -x86_64 bundle config build.rmagick --with-opt-dir=/usr/local/opt/imagemagick
+```
+
+Update `Gemfile` to:
+
+```ruby
+gem 'eventmachine', '~> 1.2.7'
+```
+
+Then run:
+
+```sh
+arch -x86_64 bundle update eventmachine
+arch -x86_64 bundle install
+```
+
+### 9. Alternative: Patch EventMachine 1.0.7
+
+```sh
+cd ~/.rbenv/versions/2.7.8/lib/ruby/gems/2.7.0/gems/eventmachine-1.0.7/ext
+# Replace all `bind(...)` with `::bind(...)`
+# Example:
+# - if (bind(sd, bind_to, bind_to_size) < 0) {
+# + if (::bind(sd, bind_to, bind_to_size) < 0) {
+
+make clean
+make
+arch -x86_64 bundle install
+```
