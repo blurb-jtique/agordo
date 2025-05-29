@@ -124,6 +124,12 @@ blurbbooks/services-postgres2:latest
 blurbbooks/service-tomcat8-jre8
 blurbbooks/product-service
 
+**Get up docker_microservices**
+
+```sh
+podman compose up 
+```
+
 ## 3. download the Hemingway artifact
 
 ```sh
@@ -131,6 +137,15 @@ sh ~/${PATH_TO}/docker_microservices/download-if-newer.sh http://slc-jenkins-int
 ```
 
 ## 4. begin with the Ruby installation - 2.7.8
+
+
+Install Homebrew
+
+```sh
+	```sh
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 
 ```sh
 brew install wget gcc make openssl libyaml readline zlib pkg-config sqlite autoconf automake libtool postgresql mysql node yarn libvips redis memcached git chromedriver curl watchman libpq graphviz readline libyaml gmp libffi imagemagick@6 libxml2 libxslt exiftool pgcli
@@ -142,6 +157,13 @@ install rbenv
 brew install rbenv
 ```
 
+- **Add the next line in the .bashrc/.zshrc config**
+
+```sh
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
+```
+
 ```sh
 rbenv install 2.7.8
 rbenv global 2.7.8
@@ -149,20 +171,42 @@ gem install bundler -v 2.2.34
 rbenv rehash
 ```
 
-## 5. install ruby dependencies
+
+## 5 add dev.blurb.com, dev.blurb.es in hosts
+
+```sh
+echo "127.0.0.1 dev.blurb.com" | sudo tee -a /etc/hosts
+echo "127.0.0.1 dev.blurb.es" | sudo tee -a /etc/hosts
+```
+
+## 6 - Review node version if it is not installed, install it
+
+```sh
+node -v
+```
+
+```sh
+brew install node
+```
+
+## 7. install ruby dependencies
 
 ```sh
 cd blurby
 bundle install
 ```
 
+## 8. install docker compose
 
-## 6. install docker ecosystem
+```sh
+brew install docker-compose
+```
+
+## 9. Request docker hub credentials in order to get access to blurbbooks
 
 ```sh
 brew install postgresql@11
 ```
-
 
 ## Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
 
@@ -307,4 +351,14 @@ cd ~/.rbenv/versions/2.7.8/lib/ruby/gems/2.7.0/gems/eventmachine-1.0.7/ext
 make clean
 make
 arch -x86_64 bundle install
+```
+
+
+
+## Troubleshooting podman 
+
+- **Run the next command to fix issues running podman compose up**
+
+```sh
+	podman network rm docker_microservices_default
 ```
