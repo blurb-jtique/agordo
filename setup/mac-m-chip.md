@@ -208,6 +208,84 @@ brew install docker-compose
 brew install postgresql@11
 ```
 
+## 10. install DBeaver
+
+- **download it from** https://dbeaver.io/
+
+- **Setting up**
+	- set port 25432
+	- enable check show all databases	
+
+## 11. Install prostgress and setup databases
+
+  ***11.1. install postgresql***
+
+  ```sh
+  brew install **petere**/postgresql/postgresql@11
+  ```
+  ***11.2. add export to zshrc***
+
+  Add postgresql@11 first in your PATH, run:
+
+  ```sh
+  echo 'export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"' >> ~/.zshrc
+  ```
+
+  Set the following Postgres flags
+
+	```sh
+	export LDFLAGS="-L/opt/homebrew/opt/postgresql@11/lib"
+	
+	export CPPFLAGS="-I/opt/homebrew/opt/postgresql@11/include"
+
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@11/lib/pkgconfig"
+	```
+	
+  **11.3. review psql version**
+
+	```sh
+	psql --version
+	```
+
+  **11.4. Download database test and dev**
+   [drive](https://drive.google.com/drive/folders/1nMt96XhcTQgzcbbODe2kehuYe-8s_lG9), folder resources
+
+  **11.5. Test connection psql for test and dev databases**
+
+  update test database
+
+  ```sh
+  psql -p 25432 -d postgres -U postgres -h 127.0.0.1
+  DROP DATABASE blurb_test_b; if already exist
+	psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error  
+  ```
+
+  **11. 6. repeat the same above process with the dev database sql**
+
+  update dev database
+
+	```sh
+	psql -p 35432 -d postgres -U postgres -h 127.0.0.1
+	DROP DATABASE blurb_test_b; if already exist
+	psql -U postgres -f ~/15_202505130933-blurb_dev.sql | grep error
+	```
+
+  Comment the lines 13 and 36 related to timeout
+
+	```sh
+	-- SET transaction_timeout = 0;
+	```
+
+## 12. Start Blurb project
+
+**Config endpoints** 
+Create `endpoints.yml` base on the `endpoints.yml.example` and update it with the [endpoints](https://gist.github.com/blurb-jpedroza/f5478b1bded750af138c9e063a606888)
+
+**run blurb project** 
+```sh
+bundle exec thin start
+```
+
 ## Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
 
 If you run into compilation issues with gems like `eventmachine` or native extensions depending on OpenSSL or PG, especially on M chips, follow this guide to set up a parallel x86 (Intel) environment using Rosetta 2.
@@ -352,8 +430,6 @@ make clean
 make
 arch -x86_64 bundle install
 ```
-
-
 
 ## Troubleshooting podman 
 
