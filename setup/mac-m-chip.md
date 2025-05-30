@@ -9,7 +9,7 @@ all steps must be executed on Mac
 
 - create and add ssh keys to gihub
 ```sh
-    ssh-keygen -t rsa -C "[YOUR USER HERE]@blurb.com"
+    ssh-keygen -t ed25519 -C "[YOUR USER HERE]@blurb.com"
 ```
 
 - config GitHub username and email
@@ -17,15 +17,16 @@ all steps must be executed on Mac
     git config --global user.name "Your Name"
     git config --global user.email "your.email@example.com"
 ```
-
 - Auto-Start SSH Agent on Login
 
 ```sh
+# Start the SSH agent in the background. This is useful for managing your SSH keys during your session,
+# especially when installing dependencies from private repositories that require SSH authentication.
 eval "$(ssh-agent -s)"
+
+# Add your private SSH key to the agent so you don't have to enter your passphrase every time.
 ssh-add ~/.ssh/id_rsa
 
-source ~/.zshrc
-```
 
 - blurby : temp-sandbox
 - hemingway
@@ -63,7 +64,7 @@ git clone git@github.com:zsh-users/zsh-syntax-highlighting.git
 plugins=(git)
 ```
 
-- Enalbe plugnis
+- Enable plugnis
 
 ```sh
 plugins=(git bundler colorize brew zeus gem rails ruby npm node nanoc history-substring-search zsh-syntax-highlighting)
@@ -130,22 +131,21 @@ blurbbooks/product-service
 podman compose up 
 ```
 
-## 3. download the Hemingway artifact
+## 4. download the Hemingway artifact
 
 ```sh
 sh ~/${PATH_TO}/docker_microservices/download-if-newer.sh http://slc-jenkins-integration.vip.blurb.com/view/all/job/hemingway/lastSuccessfulBuild/artifact/assets.tgz hemingway.tgz
 ```
 
-## 4. begin with the Ruby installation - 2.7.8
-
+## 5. begin with the Ruby installation - 2.7.8
 
 Install Homebrew
 
 ```sh
-	```sh
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sh /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+Install dependencies
 
 ```sh
 brew install wget gcc make openssl libyaml readline zlib pkg-config sqlite autoconf automake libtool postgresql mysql node yarn libvips redis memcached git chromedriver curl watchman libpq graphviz readline libyaml gmp libffi imagemagick@6 libxml2 libxslt exiftool pgcli
@@ -172,43 +172,53 @@ rbenv rehash
 ```
 
 
-## 5 add dev.blurb.com, dev.blurb.es in hosts
+## 6 add dev.blurb.com, dev.blurb.es in hosts
 
 ```sh
 echo "127.0.0.1 dev.blurb.com" | sudo tee -a /etc/hosts
 echo "127.0.0.1 dev.blurb.es" | sudo tee -a /etc/hosts
 ```
 
-## 6 - Review node version if it is not installed, install it
+## 7 - Review node version if it is not installed, install it
 
 ```sh
 node -v
 ```
 
 ```sh
+curl -fsSL https://github.com/nodenv/nodenv-installer/raw/HEAD/bin/nodenv-installer | bash
+
+Edit your ~/.zshrc:
+nano ~/.zshrc
+Add the following at the bottom:
+
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+
+source ~/.zshrc
+```
+
+```sh
 brew install node
 ```
 
-## 7. install ruby dependencies
+## 8. install ruby dependencies
 
 ```sh
 cd blurby
 bundle install
 ```
 
-## 8. install docker compose
+
+## 9. install docker compose
 
 ```sh
 brew install docker-compose
 ```
 
-## 9. Request docker hub credentials in order to get access to blurbbooks
+## 10. Request docker hub credentials in order to get access to blurbbooks
 
-```sh
-brew install postgresql@11
-```
-
-## 10. install DBeaver
+## 11. install DBeaver
 
 - **download it from** https://dbeaver.io/
 
@@ -216,14 +226,14 @@ brew install postgresql@11
 	- set port 25432
 	- enable check show all databases	
 
-## 11. Install prostgress and setup databases
+## 12. Install prostgress and setup databases
 
-  ***11.1. install postgresql***
+  ***12.1. install postgresql***
 
   ```sh
   brew install **petere**/postgresql/postgresql@11
   ```
-  ***11.2. add export to zshrc***
+  ***12.2. add export to zshrc***
 
   Add postgresql@11 first in your PATH, run:
 
@@ -241,16 +251,16 @@ brew install postgresql@11
   export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@11/lib/pkgconfig"
 	```
 	
-  **11.3. review psql version**
+  **12.3. review psql version**
 
 	```sh
 	psql --version
 	```
 
-  **11.4. Download database test and dev**
+  **12.4. Download database test and dev**
    [drive](https://drive.google.com/drive/folders/1nMt96XhcTQgzcbbODe2kehuYe-8s_lG9), folder resources
 
-  **11.5. Test connection psql for test and dev databases**
+  **12.5. Test connection psql for test and dev databases**
 
   update test database
 
@@ -260,7 +270,7 @@ brew install postgresql@11
 	psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error  
   ```
 
-  **11. 6. repeat the same above process with the dev database sql**
+  **12.6. repeat the same above process with the dev database sql**
 
   update dev database
 
@@ -276,7 +286,7 @@ brew install postgresql@11
 	-- SET transaction_timeout = 0;
 	```
 
-## 12. Start Blurb project
+## 13. Start Blurb project
 
 **Config endpoints** 
 Create `endpoints.yml` base on the `endpoints.yml.example` and update it with the [endpoints](https://gist.github.com/blurb-jpedroza/f5478b1bded750af138c9e063a606888)
@@ -286,23 +296,23 @@ Create `endpoints.yml` base on the `endpoints.yml.example` and update it with th
 bundle exec thin start
 ```
 
-## Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
+## 14. Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
 
 If you run into compilation issues with gems like `eventmachine` or native extensions depending on OpenSSL or PG, especially on M chips, follow this guide to set up a parallel x86 (Intel) environment using Rosetta 2.
 
-### 1. Install Rosetta 2
+### 14.1. Install Rosetta 2
 
 ```sh
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
-### 2. Open a terminal in x86 mode
+### 14.2. Open a terminal in x86 mode
 
 ```sh
 arch -x86_64 /bin/zsh
 ```
 
-### 3. Install Intel Homebrew
+### 14.3. Install Intel Homebrew
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -327,7 +337,7 @@ Verify:
 arch -x86_64 brew --version
 ```
 
-### 4. Install OpenSSL 1.1 manually
+### 14.4. Install OpenSSL 1.1 manually
 
 ```sh
 mkdir -p ~/src/openssl-1.1 && cd ~/src/openssl-1.1
@@ -342,14 +352,14 @@ arch -x86_64 make -j$(sysctl -n hw.ncpu)
 arch -x86_64 make install_sw
 ```
 
-### 5. Install x86 dependencies via Intel Homebrew
+### 14.5. Install x86 dependencies via Intel Homebrew
 
 ```sh
 arch -x86_64 brew update
 arch -x86_64 /usr/local/bin/brew install zlib libyaml readline gdbm pkgconf
 ```
 
-### 6. Update `~/.zshrc` for x86 builds
+### 14.6. Update `~/.zshrc` for x86 builds
 
 ```sh
 if [ "$(uname -m)" = "x86_64" ]; then
@@ -390,13 +400,13 @@ Reload:
 source ~/.zshrc
 ```
 
-### 7. Install remaining dependencies
+### 14.7. Install remaining dependencies
 
 ```sh
 arch -x86_64 /usr/local/bin/brew install libpq imagemagick
 ```
 
-### 8. Bundler Configuration
+### 14.8. Bundler Configuration
 
 ```sh
 arch -x86_64 bundle config build.eventmachine --with-openssl-dir=$HOME/.local/openssl-1.1
@@ -417,7 +427,7 @@ arch -x86_64 bundle update eventmachine
 arch -x86_64 bundle install
 ```
 
-### 9. Alternative: Patch EventMachine 1.0.7
+### 14.9. Alternative: Patch EventMachine 1.0.7
 
 ```sh
 cd ~/.rbenv/versions/2.7.8/lib/ruby/gems/2.7.0/gems/eventmachine-1.0.7/ext
@@ -431,10 +441,10 @@ make
 arch -x86_64 bundle install
 ```
 
-## Troubleshooting podman 
+## 15. Troubleshooting podman
 
 - **Run the next command to fix issues running podman compose up**
 
 ```sh
-	podman network rm docker_microservices_default
+podman network rm docker_microservices_default
 ```
