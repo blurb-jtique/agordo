@@ -7,13 +7,14 @@
 
 ## 2. Effective Daily Stand-ups
 
-* **Purpose:** A quick, daily synchronization meeting for the Engineers to inspect progress toward the Sprint Goal and adapt the plan for the next 24 hours. It's not a status report to managers.
+* **Purpose:** A quick, daily synchronization meeting for Engineers to inspect progress toward the Sprint Goal and adapt the plan for the next 24 hours. Not a status report to managers.
+* **Key Focus:** Identify blockers first and use parking lots efficiently for detailed discussions.
 * **Structure (The 3 Questions):**
-  * What did I accomplish yesterday that helped the team meet especially the Sprint Goal?
-  * What will I do today to help the team meet the Sprint Goal?
-  * Do I see any impediments or blockers preventing me or the team from meeting the Sprint Goal?
-* **Time-boxed:** Keep it short (e.g., 15 minutes).
-* **Problem Solving Offline:** If detailed problem-solving is needed, schedule a separate meeting with relevant team members after the stand-up. [See **Parking Lot** proposal]
+   1. What impediments or blockers are preventing me or the team from meeting the Sprint Goal?
+   2. What did I accomplish yesterday that contributed to the Sprint Goal?
+   3. What will I do today to help achieve the Sprint Goal?
+* **Time-boxed:** Strictly limit to 15 minutes for all the team.
+* **Problem-Solving Approach:** Take detailed discussions offline by scheduling separate meetings with relevant team members after the stand-up (utilize the **Parking Lot** system).
 
 ## 3. Collaboration and Communication
 

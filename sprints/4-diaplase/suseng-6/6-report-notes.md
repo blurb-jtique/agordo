@@ -1,5 +1,5 @@
 # Gift cards report
-This comprehensive analysis examines the outstanding gift cards in our system, revealing approximately **$819,653.13** in unredeemed value across **25,118** gift cards. This report provides insights into the inactive gift card program's financial impact, customer usage patterns, and potential accounting considerations.
+This comprehensive analysis examines the outstanding gift cards in our system, revealing approximately **$652,590.13** in unredeemed value across **25,118** gift cards. This report provides insights into the inactive gift card program's financial impact, customer usage patterns, and potential accounting considerations.
 
 [REPORT](https://docs.google.com/spreadsheets/d/10fxVYOTWian99SpH7FkRbMbu87rdAbyriRJa1vKQwOk/edit?usp=sharing)
 
@@ -26,7 +26,7 @@ Common Table Expressions (CTEs) were used to organize queries efficiently and av
 ## Results
 
 - **Total Gift Cards:** 25118
-- **Total Outstanding Value:** ~ USD 819,653.13
+- **Total Outstanding Value:** ~ USD 652,590.13
 
 ## Concerns
 1. **Currency Conversion:** Determining appropriate exchange rates (current vs. historical)
