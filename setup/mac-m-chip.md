@@ -1,3 +1,22 @@
+# Setup Guide for Mac (M-chip)
+
+## Table of Contents
+1. [Initial Setup](#1-initial-setup)
+   - [GitHub Configuration](#11-github-config)
+   - [SSH Keys Setup](#12-ssh-keys)
+2. [Environment Setup](#2-setup-zsh)
+3. [Podman Installation](#3-install-podman)
+4. [Hemingway Artifact Download](#4-download-the-hemingway-artifact)
+5. [Ruby Installation](#5-begin-with-the-ruby-installation---278)
+6. [Hosts Configuration](#6-add-devblurbcom-devblurbes-in-hosts)
+7. [Node.js Installation](#7-review-node-version-if-it-is-not-installed-install-it)
+8. [Docker Compose Installation](#8-install-docker-compose)
+9. [DBeaver Installation](#9-install-dbeaver)
+10. [PostgreSQL Installation and Database Setup](#10-install-prostgress-and-setup-databases)
+11. [Blurb Project Setup](#11-start-blurb-project)
+12. [Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues](#12-troubleshooting-intelrosetta-setup-for-eventmachine--node-issues)
+13. [Podman Troubleshooting](#13-troubleshooting-podman)
+
 # Setup for Mac
 
 all steps must be executed on Mac
@@ -26,13 +45,6 @@ eval "$(ssh-agent -s)"
 
 # Add your private SSH key to the agent so you don't have to enter your passphrase every time.
 ssh-add ~/.ssh/id_rsa
-
-
-- blurby : temp-sandbox
-- hemingway
-- https://github.com/blurb/docker_microservices : temp-sandbox
-
-- Download from Drive the docker assets and put all of them in the root of docker_microservices project
 
 ## 2. Setup zsh
 
@@ -91,7 +103,7 @@ export LC_ALL=es_CO.UTF-8
 ```
 
 
-## 3. install podman
+## 2. install podman
 
 https://podman-desktop.io/docs/installation/macos-install
 
@@ -105,8 +117,6 @@ enable third party docker components compatibility
 - go to settings/registries
 - use the existing docker hub registry and edit it, setting the username as blurbendava and ask for the password to the team (see if it is possible to stoer it using keeper)
 
-do not install podman-compose, instead instal docker compose using the repo and the bin, moving it to bin folder
-
 - **install podman desktop**
 	- **review mportant extensions**
 		- composer
@@ -116,8 +126,20 @@ do not install podman-compose, instead instal docker compose using the repo and 
 		- registries
 		
 	- **settings**
-		- docker compatibility enabled
+		- - Enable Docker compatibility in Podman Desktop settings.
 
+- Install podman and podman-desktop:
+  ```sh
+  brew install podman podman-desktop
+  ```
+
+- Download from Drive the docker assets and put all of them in the root of docker_microservices project
+
+ ```sh
+  cp ~/Downloads/docker-assets.zip ~/code/docker_microservices/
+  cd ~/code/docker_microservices
+  unzip docker-assets.zip
+```
 
 **pull the needed images as it follows:**
 
@@ -127,17 +149,19 @@ blurbbooks/product-service
 
 **Get up docker_microservices**
 
+- Start services:
+
 ```sh
 podman compose up 
 ```
 
-## 4. download the Hemingway artifact
+## 3. download the Hemingway artifact
 
 ```sh
 sh ~/${PATH_TO}/docker_microservices/download-if-newer.sh http://slc-jenkins-integration.vip.blurb.com/view/all/job/hemingway/lastSuccessfulBuild/artifact/assets.tgz hemingway.tgz
 ```
 
-## 5. begin with the Ruby installation - 2.7.8
+## 4. begin with the Ruby installation - 2.7.8
 
 Install Homebrew
 
@@ -171,15 +195,14 @@ gem install bundler -v 2.2.34
 rbenv rehash
 ```
 
-
-## 6 add dev.blurb.com, dev.blurb.es in hosts
+## 5. add dev.blurb.com, dev.blurb.es in hosts
 
 ```sh
 echo "127.0.0.1 dev.blurb.com" | sudo tee -a /etc/hosts
 echo "127.0.0.1 dev.blurb.es" | sudo tee -a /etc/hosts
 ```
 
-## 7 - Review node version if it is not installed, install it
+## 6. Review node version if it is not installed, install it
 
 ```sh
 node -v
@@ -202,23 +225,15 @@ source ~/.zshrc
 brew install node
 ```
 
-## 8. install ruby dependencies
-
-```sh
-cd blurby
-bundle install
-```
-
-
-## 9. install docker compose
+## 7. install docker compose
 
 ```sh
 brew install docker-compose
 ```
 
-## 10. Request docker hub credentials in order to get access to blurbbooks
+## 8. Request docker hub credentials in order to get access to blurbbooks
 
-## 11. install DBeaver
+## 9. install DBeaver
 
 - **download it from** https://dbeaver.io/
 
@@ -226,93 +241,105 @@ brew install docker-compose
 	- set port 25432
 	- enable check show all databases	
 
-## 12. Install prostgress and setup databases
+## 10. Install prostgress and setup databases
 
-  ***12.1. install postgresql***
+***10.1. install postgresql***
 
-  ```sh
-  brew install **petere**/postgresql/postgresql@11
-  ```
-  ***12.2. add export to zshrc***
+```sh
+brew install **petere**/postgresql/postgresql@11
+```
 
-  Add postgresql@11 first in your PATH, run:
+***10.2. add export to zshrc***
 
-  ```sh
+Add postgresql@11 first in your PATH, run:
+
+```sh
   echo 'export PATH="/opt/homebrew/opt/postgresql@11/bin:$PATH"' >> ~/.zshrc
-  ```
+```
 
   Set the following Postgres flags
 
-	```sh
-	export LDFLAGS="-L/opt/homebrew/opt/postgresql@11/lib"
+```sh
+export LDFLAGS="-L/opt/homebrew/opt/postgresql@11/lib"
 	
-	export CPPFLAGS="-I/opt/homebrew/opt/postgresql@11/include"
+export CPPFLAGS="-I/opt/homebrew/opt/postgresql@11/include"
 
-  export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@11/lib/pkgconfig"
-	```
+export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@11/lib/pkgconfig"
+```
 	
-  **12.3. review psql version**
+**10.3. review psql version**
 
-	```sh
-	psql --version
-	```
+```sh
+psql --version
+```
 
-  **12.4. Download database test and dev**
+**10.4. Download database test and dev**
+
    [drive](https://drive.google.com/drive/folders/1nMt96XhcTQgzcbbODe2kehuYe-8s_lG9), folder resources
 
-  **12.5. Test connection psql for test and dev databases**
+**10.5. Test connection psql for test and dev databases**
 
-  update test database
+update test database
 
-  ```sh
-  psql -p 25432 -d postgres -U postgres -h 127.0.0.1
-  DROP DATABASE blurb_test_b; if already exist
-	psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error  
-  ```
+```sh
+psql -p 25432 -d postgres -U postgres -h 127.0.0.1
 
-  **12.6. repeat the same above process with the dev database sql**
+DROP DATABASE blurb_test_b; if already exist
 
-  update dev database
+psql -U postgres -f ~/11_202505041046-blurb_test_b.sql | grep error  
+```
 
-	```sh
-	psql -p 35432 -d postgres -U postgres -h 127.0.0.1
-	DROP DATABASE blurb_test_b; if already exist
-	psql -U postgres -f ~/15_202505130933-blurb_dev.sql | grep error
-	```
+**10.6. repeat the same above process with the dev database sql**
 
-  Comment the lines 13 and 36 related to timeout
+update dev database
 
-	```sh
-	-- SET transaction_timeout = 0;
-	```
+```sh
+psql -p 35432 -d postgres -U postgres -h 127.0.0.1
+	
+DROP DATABASE blurb_test_b; if already exist
+	
+psql -U postgres -f ~/15_202505130933-blurb_dev.sql | grep error
+```
 
-## 13. Start Blurb project
+Comment the lines 13 and 36 related to timeout
+
+```sh
+-- SET transaction_timeout = 0;
+```
+
+## 11. Start Blurb project
 
 **Config endpoints** 
 Create `endpoints.yml` base on the `endpoints.yml.example` and update it with the [endpoints](https://gist.github.com/blurb-jpedroza/f5478b1bded750af138c9e063a606888)
 
 **run blurb project** 
+
+```sh
+cd blurby
+bundle install
+```
+
 ```sh
 bundle exec thin start
 ```
 
-## 14. Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
+## 12. Troubleshooting: Intel/Rosetta Setup for EventMachine & Node Issues
 
 If you run into compilation issues with gems like `eventmachine` or native extensions depending on OpenSSL or PG, especially on M chips, follow this guide to set up a parallel x86 (Intel) environment using Rosetta 2.
 
-### 14.1. Install Rosetta 2
+### 12.1. Install Rosetta 2
 
 ```sh
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 ```
 
-### 14.2. Open a terminal in x86 mode
+### 12.2. Open a terminal in x86 mode
 
 ```sh
 arch -x86_64 /bin/zsh
 ```
 
-### 14.3. Install Intel Homebrew
+### 12.3. Install Intel Homebrew
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -337,7 +364,7 @@ Verify:
 arch -x86_64 brew --version
 ```
 
-### 14.4. Install OpenSSL 1.1 manually
+### 12.4. Install OpenSSL 1.1 manually
 
 ```sh
 mkdir -p ~/src/openssl-1.1 && cd ~/src/openssl-1.1
@@ -352,14 +379,14 @@ arch -x86_64 make -j$(sysctl -n hw.ncpu)
 arch -x86_64 make install_sw
 ```
 
-### 14.5. Install x86 dependencies via Intel Homebrew
+### 12.5. Install x86 dependencies via Intel Homebrew
 
 ```sh
 arch -x86_64 brew update
 arch -x86_64 /usr/local/bin/brew install zlib libyaml readline gdbm pkgconf
 ```
 
-### 14.6. Update `~/.zshrc` for x86 builds
+### 12.6. Update `~/.zshrc` for x86 builds
 
 ```sh
 if [ "$(uname -m)" = "x86_64" ]; then
@@ -400,13 +427,13 @@ Reload:
 source ~/.zshrc
 ```
 
-### 14.7. Install remaining dependencies
+### 12.7. Install remaining dependencies
 
 ```sh
 arch -x86_64 /usr/local/bin/brew install libpq imagemagick
 ```
 
-### 14.8. Bundler Configuration
+### 12.8. Bundler Configuration
 
 ```sh
 arch -x86_64 bundle config build.eventmachine --with-openssl-dir=$HOME/.local/openssl-1.1
@@ -427,7 +454,7 @@ arch -x86_64 bundle update eventmachine
 arch -x86_64 bundle install
 ```
 
-### 14.9. Alternative: Patch EventMachine 1.0.7
+### 12.9. Alternative: Patch EventMachine 1.0.7
 
 ```sh
 cd ~/.rbenv/versions/2.7.8/lib/ruby/gems/2.7.0/gems/eventmachine-1.0.7/ext
@@ -441,7 +468,7 @@ make
 arch -x86_64 bundle install
 ```
 
-## 15. Troubleshooting podman
+## 13. Troubleshooting podman
 
 - **Run the next command to fix issues running podman compose up**
 
