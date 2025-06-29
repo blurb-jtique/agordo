@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PrintTalk xmlns="http://www.printtalk.org/schema" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  payloadID="2025-03-17T14:30:00-07:00.BLURB-STD-P-63037159@blurb.com"
+  timeStamp="2025-03-17T14:30:00-07:00" version="1.1"
+  xsi:schemaLocation="http://www.printtalk.org/schema http://www.printtalk.org/schema/printTalk_1_1.xsd">
+  <Header>
+    <From>
+      <Credential domain="blurb.com">
+        <Identity>Blurb</Identity>
+      </Credential>
+    </From>
+    <To>
+      <Credential domain="rpiprint.com">
+        <Identity>orders@rpiprint.com</Identity>
+      </Credential>
+    </To>
+    <Sender>
+      <Credential domain="blurb.com">
+        <Identity>Blurb</Identity>
+        <SharedSecret>T3!m</SharedSecret>
+      </Credential>
+      <UserAgent>Blurb BookServe 1.9</UserAgent>
+    </Sender>
+  </Header>
+  <Request>
+    <PurchaseOrder AgentDisplayName="Blurb BookServe 1.3" AgentID="Blurb1.0"
+      BusinessID="BLURB-STD-P-63037159" Currency="USD" Division="standard"
+      Expires="2025-06-15T14:30:00-07:00" Facility="SEA" LanguageCode="en"
+      RequestDate="2025-03-17T14:30:00-07:00" SLADate="2025-03-21T16:59:00-07:00"
+      WebOrderNumber="12200888">
+      <Pricing Item="Total order" Price="47.98">
+        <Pricing Item="Total" Price="42.99" />
+        <Pricing Item="Shipping" Price="4.99" />
+        <Pricing Item="Tax" Price="0.00" />
+      </Pricing>
+      <jdf:JDF ID="JDF-Root" JobID="job-BLURB-STD-P-63037159" Status="Waiting"
+        Type="Product-SOFTCOVER-WIREO">
+        <CustomerInfo CustomerID="Customer1">
+          <ContactRef rRef="Contact1" />
+        </CustomerInfo>
+        <ResourceLinkPool>
+          <DeliveryIntentLink Usage="Input" rRef="Delivery1" />
+        </ResourceLinkPool>
+        <ResourcePool>
+          <Contact Class="Parameter" ContactTypes="Billing" ID="Contact1" Status="Available">
+            <Address City="San Francisco" CountryCode="USA" PostalCode="94105"
+              Region="CA" Street="456 Market St" />
+            <Person FamilyName="Smith" FirstName="Jane">
+              <ComChannel ChannelType="Phone" Locator="415-555-9876" />
+              <ComChannel ChannelType="Email" Locator="jane.smith@example.com" />
+            </Person>
+          </Contact>
+          <Contact Class="Parameter" ContactTypes="Shipping" ID="Contact2" Status="Available">
+            <Address City="San Francisco" CountryCode="USA" PostalCode="94105"
+              Region="CA" Street="456 Market St" />
+            <Person FamilyName="Smith" FirstName="Jane">
+              <ComChannel ChannelType="Phone" Locator="415-555-9876" />
+              <ComChannel ChannelType="Email" Locator="jane.smith@example.com" />
+            </Person>
+          </Contact>
+          <DeliveryIntent Class="Intent" ID="Delivery1" Status="Available">
+            <Method DataType="NameSpan" Preferred="UPS Ground" />
+            <DropIntent>
+              <ContactRef rRef="Contact2" />
+              <DropItemIntent Amount="1" Unit="ea">
+                <ComponentRef rRef="item-P-45996522" />
+              </DropItemIntent>
+            </DropIntent>
+          </DeliveryIntent>
+        </ResourcePool>
+
+        <!-- Cover JDF (2-page spread: back left, front right) -->
+        <JDF DescriptiveName="cover-P-45996522" ID="jdf-cover-P-45996522"
+          JobPartID="job-cover-P-45996522" Status="Waiting" Type="Product">
+          <ResourceLinkPool>
+            <ComponentLink rRef="cover-P-45996522" />
+            <ColorIntentLink rRef="color-cover-P-45996522" />
+            <MediaIntentLink rRef="media-cover-P-45996522" />
+            <ArtDeliveryIntentLink rRef="art-cover-P-45996522" />
+          </ResourceLinkPool>
+          <ResourcePool>
+            <Component Amount="1" Class="Quantity" DescriptiveName="cover-P-45996522"
+              ID="cover-P-45996522" ManufactureMethod="POD" PONumber=""
+              ProductID="CP14417095_P17747559_sw_6x9_trade" ProductType="Cover"
+              Status="Unavailable" />
+            <ColorIntent Class="Intent" ID="color-cover-P-45996522" Status="Available">
+              <ColorStandard DataType="NameSpan" Preferred="CMYK" />
+              <ColorICCStandard DataType="NameSpan" Preferred="ICC_STANDARD" />
+            </ColorIntent>
+            <MediaIntent Class="Intent" ID="media-cover-P-45996522" Status="Available">
+              <FrontCoatings DataType="EnumerationSpan" Preferred="Matte" />
+              <BackCoatings DataType="EnumerationSpan" Preferred="Matte" />
+              <StockType DataType="NameSpan" Preferred="softcover-matte-paper">
+                <MediaColor DataType="EnumerationSpan" Preferred="white" />
+                <USWeight DataType="NumberSpan" Preferred="100" />
+                <Grade DataType="IntegerSpan" Preferred="1" />
+              </StockType>
+            </MediaIntent>
+            <ArtDeliveryIntent Class="Intent" ID="art-cover-P-45996522" Status="Available">
+              <ArtDelivery ArtDeliveryType="DigitalNetwork" />
+              <RunList>
+                <LayoutElement>
+                  <FileSpec CheckSum="abc123def456" FileSize="2100000"
+                    FileVersion="1"
+                    URL="https://production.builder.blurb.com/pdf-processing/files/P17747559-cover-spread-wireo.pdf?Expires=1747319650"
+                    checksum="abc123def456" />
+                </LayoutElement>
+              </RunList>
+            </ArtDeliveryIntent>
+          </ResourcePool>
+        </JDF>
+
+        <!-- Interior/Text JDF (text content only, no cover pages) -->
+        <JDF DescriptiveName="interior-P-45996522" ID="jdf-interior-P-45996522"
+          JobPartID="job-interior-P-45996522" Status="Waiting" Type="Product">
+          <ResourceLinkPool>
+            <ComponentLink rRef="interior-P-45996522" />
+            <ColorIntentLink rRef="color-interior-P-45996522" />
+            <MediaIntentLink rRef="media-interior-P-45996522" />
+            <ArtDeliveryIntentLink rRef="art-interior-P-45996522" />
+          </ResourceLinkPool>
+          <ResourcePool>
+            <Component Amount="1" Class="Quantity" DescriptiveName="interior-P-45996522"
+              ID="interior-P-45996522" ManufactureMethod="POD" PONumber=""
+              ProductID="CP14417095_P17747559_sw_6x9_trade" ProductType="BookBlock"
+              Status="Unavailable" />
+            <ColorIntent Class="Intent" ID="color-interior-P-45996522" Status="Available">
+              <ColorStandard DataType="NameSpan" Preferred="MONOCHROME" />
+              <ColorICCStandard DataType="NameSpan" Preferred="ICC_STANDARD" />
+            </ColorIntent>
+            <MediaIntent Class="Intent" ID="media-interior-P-45996522" Status="Available">
+              <FrontCoatings DataType="EnumerationSpan" Preferred="Matte" />
+              <BackCoatings DataType="EnumerationSpan" Preferred="Matte" />
+              <StockType DataType="NameSpan" Preferred="economy-trade-bw-matte-paper">
+                <MediaColor DataType="EnumerationSpan" Preferred="white" />
+                <USWeight DataType="NumberSpan" Preferred="60" />
+                <Grade DataType="IntegerSpan" Preferred="2" />
+              </StockType>
+            </MediaIntent>
+            <ArtDeliveryIntent Class="Intent" ID="art-interior-P-45996522" Status="Available">
+              <ArtDelivery ArtDeliveryType="DigitalNetwork" />
+              <RunList>
+                <LayoutElement>
+                  <FileSpec CheckSum="def456ghi789" FileSize="1800000"
+                    FileVersion="1"
+                    URL="https://production.builder.blurb.com/pdf-processing/files/P17747559-interior-wireo.pdf?Expires=1747319650"
+                    checksum="def456ghi789" />
+                </LayoutElement>
+              </RunList>
+            </ArtDeliveryIntent>
+          </ResourcePool>
+        </JDF>
+
+        <!-- Final Assembly JDF (combines cover + interior with wireo binding) -->
+        <JDF DescriptiveName="book-P-45996522" ID="jdf-book-P-45996522"
+          JobPartID="job-book-P-45996522" Status="Waiting" Type="Product">
+          <ResourceLinkPool>
+            <ComponentLink Usage="Output" rRef="item-P-45996522" />
+            <ComponentLink Usage="Input" rRef="cover-P-45996522" />
+            <ComponentLink Usage="Input" rRef="interior-P-45996522" />
+            <BindingIntentLink rRef="bind-P-45996522" />
+            <SizeIntentLink rRef="size-P-45996522" />
+          </ResourceLinkPool>
+          <ResourcePool>
+            <Component Amount="1" Class="Quantity" DeclaredValue="42.99"
+              DescriptiveName="My Cookbook with Wire-O Binding" ID="item-P-45996522"
+              ManufactureMethod="POD" PONumber="" ProductID="CP14417095_P17747559_sw_6x9_trade"
+              ProductType="Book" Status="Unavailable" />
+            <BindingIntent BindingOrder="Collecting" Class="Intent" ID="bind-P-45996522"
+              Status="Available">
+              <BindingType DataType="EnumerationSpan" Preferred="6x9-softcover-wireo" />
+              <SoftcoverWireoBinding>
+                <!-- No jacket, no endsheets - Sean confirmed no spine calculations -->
+              </SoftcoverWireoBinding>
+              <!-- NO SpineWidth element - Sean confirmed not needed for wireo -->
+            </BindingIntent>
+            <SizeIntent Class="Intent" ID="size-P-45996522" Status="Available">
+              <Dimensions DataType="NumberSpan" Preferred="432 648" Range="422 638~442 658" />
+              <Pages DataType="IntegerSpan" Preferred="48" />
+            </SizeIntent>
+          </ResourcePool>
+        </JDF>
+      </jdf:JDF>
+    </PurchaseOrder>
+  </Request>
+</PrintTalk>
