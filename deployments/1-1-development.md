@@ -37,9 +37,13 @@ By scripting and hooking into Git's workflow (e.g., `pre-commit`, `post-checkout
 * **our Git history stays clean**
 * **No production-breaking code is ever pushed accidentally**
 
----
+--
 
-## The Implementation
+## The usage
+
+--
+
+## The Implementation Appendix
 
 Creating the local-env patch
 
@@ -333,7 +337,7 @@ else
 fi
 ```
 
-### 🧪 How to Use
+#### 🧪 How to Use
 
 1. Save it as `unapply-local-env-patch`
 2. Make it executable:
