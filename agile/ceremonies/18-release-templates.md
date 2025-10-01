@@ -78,22 +78,7 @@ Done | [SUSENG-112](link-to-jira/SUSENG-112) | Perform May 2025 monthly exchange
 * **Deployment Date:** \[Date\]
 * **Notes (Optional):** Link to detailed documentation if available, or any quick callouts.
 
-**Example:**
-
-* **Feature Released:** O-Ring Binding Option for Notebooks (Phase 1\)
-* **JIRA Ticket(s):** SUSENG-45 (PR#8945), SUSENG-105 (PR#8946)
-* **Change Operator(s):** Johan Tique
-* **Platform On-Call:** Michelle Dea
-* **DevOps On-Call:** Tom Miyake
-* **Purpose:** Allows users to select an O-ring binding for specific notebook sizes in BookWright Online, offering a lay-flat experience.
-* **Key Changes:**
-  * "Hardcover \- O-Ring Binding" option available for 5x8 Notebooks.
-  * Pricing updated to reflect the new binding type.
-* **Key Risks Considered:** Minor risk of UOS translation issues, mitigated by pre-deployment testing with Melissa's team.
-* **Impact:** New product option available for customers. UOS translation updated.
-* **Monitoring/Performance Notes:** Order creation for O-Ring binding monitored via Sumo Logic query \[query\_link\]; initial performance nominal.
-* **Rollback Consideration:** Feature is directly integrated; standard service rollback procedures apply.
-* **Deployment Date:** 2025-05-20
+list of chan
 
 ## 2. Template for: Bug Fix
 
